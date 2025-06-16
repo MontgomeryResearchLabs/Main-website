@@ -1,0 +1,384 @@
+.ribbon {
+    width: 90%;
+    height: 10vh;
+    background-color: #8c8c9d;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 10px;
+    justify-content: space-around;
+    color:#D1D2DB;
+    
+}
+
+select{
+    background-color: #D1D2DB;
+    color: #03062B;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-family: 'Futura', sans-serif;
+}
+
+.gc-button{
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#gc{
+    background-color: #03062B;
+    color: #D1D2DB;
+    border: none;
+    margin-top: 10px;
+    
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-family: 'Futura', sans-serif; 
+
+}
+
+
+
+.bg-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+}
+.f-wrapper{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.t-wrapper{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.s-wrapper{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.panel{
+    height: fit-content;
+    width: 80vw;
+    background-color: rgba(23, 0, 54, 1);
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 40px;
+}
+
+#panel-title{
+    color: #D1D2DB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-family: 'futura', sans-serif;
+    
+}
+
+body {
+    font-family: 'Futura', sans-serif; /* Default font */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+    body:has(input[value="Futura"]:checked) {
+    font-family: 'Futura', sans-serif;
+  }
+    body:has(input[value="Courier NEw"]:checked) {
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+  }
+  body:has(input[value="Arial"]:checked) {
+    font-family: Arial;
+  }
+  body:has(input[value="Times"]:checked) {
+    font-family: 'Times New Roman';
+  }
+  body:has(input[value="Georgia"]:checked) {
+    font-family: Georgia;
+  }
+  body:has(input[value="Fantasy"]:checked) {
+    font-family:'Fantasy';
+  }
+
+.content-wrapper{
+    display: flex;
+    align-items:first baseline;
+    justify-content: center;
+    color: #C1C3E0;
+    margin: 10px;
+    gap: 10px;
+    line-height: 1.5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    
+   
+    
+    
+  }
+/* begin navbar*/  
+
+
+  .navbar{
+    display: flex;
+    justify-content: space-between; /* space between logo and hamburger */
+    align-items: center;  
+    
+    height: 100px;
+    backdrop-filter: blur(5px);  /* Apply blur effect */
+    background-color: #C1C3E0;
+    
+
+}
+
+nav li{
+
+    
+  text-decoration: none;
+  
+  list-style: none;
+  padding: 10px;
+}
+
+.navbar.sticky{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    mix-blend-mode: difference;
+    background-color:rgba(0, 0, 0, 1)
+
+    
+}
+
+
+
+
+.sticky-active {
+    padding-top: 100px;
+    background-color: #C1C3E0; /* Adjust this based on the height of your navbar */
+  }
+
+
+  .logo{
+    display: flex;
+    
+    align-items: center;
+    padding-left: 10px;
+    mix-blend-mode: difference;
+    color: white; /* Starting color for text before blend */
+    
+    
+  }
+
+  .logo img{
+    
+    
+    margin-right: 10px; /* Space between logo and text */
+    mix-blend-mode: difference;
+  }
+/* end navbar*/  
+
+/* menu begin */
+
+
+
+
+.hamburger {
+    
+  mix-blend-mode: difference;
+  color: white; /* Starting color for text before blend */
+  
+  padding-right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+
+  font-weight: bold;
+  text-decoration: underline;
+  
+  
+
+}
+
+
+
+.hamburger.active {
+  color: white;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hide off-screen by default */
+  width: 400px;
+  height: 100vh;
+  backdrop-filter: blur(5px);  /* Apply blur effect */
+  background-color: rgb(42, 42, 42); /* Semi-transparent background */
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 999;
+  overflow-y: auto;     
+  font-size: 2rem;
+}
+
+
+
+
+
+.side-menu li {
+  
+  list-style: none;
+  padding: 5px;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Side menu active (slide in) */
+.side-menu.active {
+  right: 0;
+}
+
+.menu-content {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+  color: white;
+}
+
+/* When menu is open, fade in content */
+.side-menu.active .menu-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Close the side menu when clicked outside */
+body.open .side-menu {
+  right: 0;
+}
+
+body.menu-open .navbar.sticky {
+  background-color: rgba(0, 0, 0, 0.85); /* Add a solid background to cancel blend issues */
+  mix-blend-mode: normal;
+}
+
+a {
+  text-decoration: none;  /* Removes underline */
+  color: inherit;         /* Inherit color from parent, or you can set any color like #000 or #333 */
+}
+
+
+/* end menu */
+
+/* Circle around the cursor */
+.cursor {
+  position: fixed;
+top: 0;
+left: 0;
+width: 40px;
+height: 40px;
+background: white;
+border-radius: 50%;
+pointer-events: none;
+z-index: 10000;
+transform: translate3d(0, 0, 0);
+mix-blend-mode: difference; /* Negative color effect */
+}
+
+/* end cursor */
+
+/* begin load animation*/
+
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Background color of the loader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it stays above other content */
+  transition: opacity 0.75s, visibility 0.75s; /* Smooth fade-out effect */
+}
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden; /* Hide the loader */
+}
+
+/* end load animation*/
+
+/* INCLUDE EVERYTHING ABOVE ON EVERY PAGE */
+
+
+
+.explore{
+    padding-top:-20px;
+    height:100vh;
+    width: 100%;
+    background-color: #C1C3E0;
+    color: #03062B ;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .explore h2{
+    font-size: 10rem;
+    margin-top: 20px;
+    
+  }
+  
+  #btnAbout{
+    height: 80px;
+    width: 160px;
+    background-color: #03062B;
+    color: #D1D2DB;
+    font-family: "futura", sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    
+  
+  
+  }

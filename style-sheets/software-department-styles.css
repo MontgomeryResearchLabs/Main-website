@@ -1,0 +1,543 @@
+.gridbox {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+    justify-items: center;
+  }
+
+  .grid-title{
+    grid-column:span 3;
+    font-size: 3.5rem;
+    justify-self: center;
+    color: blue;
+  }
+  
+  .grid-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px;
+    height: 150px;
+    max-width: 120px;
+    
+
+
+  }
+  
+  .grid-item.expanded {
+    grid-column: span 1;
+    grid-row: span 2;
+    height: auto;
+    min-width: 500px;
+    color: black;
+  }
+
+  
+  .grid-item img {
+    width: 100%;
+    transition: opacity 0.3s ease;
+    display: block;
+  }
+  
+  .hover-img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+  }
+  
+  .grid-item:hover .default-img {
+    opacity: 0;
+  }
+  
+  .grid-item:hover .hover-img {
+    opacity: 1;
+  }
+  
+  .description {
+    display: none;
+    margin-top: 10px;
+  }
+
+  .contact{
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+    color: black;
+    margin-top: 15px;
+    height: 30px;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 5px;
+    font-family: 'futura', sans-serif;
+    font-size: large;
+
+  }
+
+  .contact:hover{
+    background-color: black;
+    color: white;
+    transition: 0.3s ease;
+
+
+  }
+  
+  .grid-item.expanded .description {
+    display: block;
+  }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+    
+    
+  }
+/* begin navbar*/  
+
+
+  .navbar{
+    display: flex;
+    justify-content: space-between; /* space between logo and hamburger */
+    align-items: center;  
+    
+    height: 100px;
+    backdrop-filter: blur(5px);  /* Apply blur effect */
+    background-color: white;
+    
+
+}
+
+nav li{
+
+    
+  text-decoration: none;
+  
+  list-style: none;
+  padding: 10px;
+}
+
+.navbar.sticky{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    mix-blend-mode: difference;
+    background-color:rgba(0, 0, 0, 1)
+
+    
+}
+
+
+
+
+.sticky-active {
+    padding-top: 100px;
+    background-color: white; /* Adjust this based on the height of your navbar */
+  }
+
+
+  .logo{
+    display: flex;
+    
+    align-items: center;
+    padding-left: 10px;
+    mix-blend-mode: difference;
+    color: white; /* Starting color for text before blend */
+    
+    
+  }
+
+  .logo img{
+    
+    
+    margin-right: 10px; /* Space between logo and text */
+    mix-blend-mode: difference;
+  }
+/* end navbar*/  
+
+/* menu begin */
+
+
+
+
+.hamburger {
+    
+  mix-blend-mode: difference;
+  color: white; /* Starting color for text before blend */
+  
+  padding-right: 20px;
+  cursor: pointer;
+  z-index: 10000000000;
+
+  font-weight: bold;
+  text-decoration: underline;
+  
+  
+
+}
+
+
+
+.hamburger.active {
+  color: white;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hide off-screen by default */
+  width: 400px;
+  height: 100vh;
+  backdrop-filter: blur(5px);  /* Apply blur effect */
+  background-color: rgb(42, 42, 42); /* Semi-transparent background */
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 999;
+  overflow-y: auto;     
+  font-size: 2rem;
+}
+
+
+
+
+
+.side-menu li {
+  
+  list-style: none;
+  padding: 5px;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Side menu active (slide in) */
+.side-menu.active {
+  right: 0;
+}
+
+.menu-content {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+  color: white;
+}
+
+/* When menu is open, fade in content */
+.side-menu.active .menu-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Close the side menu when clicked outside */
+body.open .side-menu {
+  right: 0;
+}
+
+body.menu-open .navbar.sticky {
+  background-color: rgba(0, 0, 0, 0.85); /* Add a solid background to cancel blend issues */
+  mix-blend-mode: normal;
+}
+
+a {
+  text-decoration: none;  /* Removes underline */
+  color: inherit;         /* Inherit color from parent, or you can set any color like #000 or #333 */
+}
+
+
+/* end menu */
+
+/* Circle around the cursor */
+.cursor {
+  position: fixed;
+top: 0;
+left: 0;
+width: 40px;
+height: 40px;
+background: white;
+border-radius: 50%;
+pointer-events: none;
+z-index: 10000;
+transform: translate3d(0, 0, 0);
+mix-blend-mode: difference; /* Negative color effect */
+}
+
+/* end cursor */
+
+/* begin load animation*/
+
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Background color of the loader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it stays above other content */
+  transition: opacity 0.75s, visibility 0.75s; /* Smooth fade-out effect */
+}
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden; /* Hide the loader */
+}
+
+/* end load animation*/
+
+/* INCLUDE EVERYTHING ABOVE ON EVERY PAGE */
+
+
+
+  
+  
+  
+  
+
+  
+
+  body {
+    overflow-x: hidden; /* Prevent horizontal overflow when menu is not visible */
+    font-family: 'futura', sans-serif;
+
+  }
+
+
+  .WIRE{
+    background-color: white;
+    height: 100vh; /* Adjust the height of the section */
+    color: red;
+    
+    
+   
+  }
+
+  .wire-title{
+    position:   relative;
+    align-self: center;
+    margin-top : 0px;
+    padding-top:20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    
+    font-size: 1.5rem;
+
+    
+    width: 30%;
+    color: red;
+
+  }
+
+
+  
+
+  
+  .my-card {
+    /* Your custom style for the inner elements */
+    width: 550px;
+    height: 350px;
+    background: red;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+  }
+  
+  .carousel {
+    margin: 25px 75px;
+    max-width: 85%;
+    justify-self: center;
+  }
+  
+  .carousel-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35px;
+  }
+  
+  .carousel-content {
+    display: flex;
+    margin: 0 35px;
+    max-width: 1400px;
+    overflow-x: hidden; /* VERY IMPORTANT: We rely on scrolling so we hide the overflow */
+    scroll-behavior: smooth;
+  }
+  
+  .carousel-content > * {
+    flex: 0 0 auto;
+    margin-right: 50px;
+  }
+  
+  .carousel-content > :last-child {
+    margin-right: 0;
+  }
+  
+  .carousel-arrow {
+    flex: 0 0 auto;
+    width: 35px;
+    height: 35px;
+    border: 5px solid black;
+    transform: rotate(45deg);
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  
+  .carousel-arrow:hover {
+    transform: rotate(45deg) scale(1.05);
+  }
+  
+  /*.carousel-arrow-disabled,
+  .carousel-arrow-disabled:hover {
+    opacity: 0.25;
+    transform: rotate(45deg);
+    cursor: auto;
+  }*/
+  
+  .carousel-arrow-left {
+    border-top: none;
+    border-right: none;
+  }
+  
+  .carousel-arrow-right {
+    border-bottom: none;
+    border-left: none;
+  }
+  
+  .carousel-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    margin: 0 15px;
+    border: 3px solid black;
+    transition: 0.1s;
+    cursor: pointer;
+  }
+  
+  .carousel-dot:hover {
+    background-color: lightgray;
+  }
+  
+  .carousel-dot-active,
+  .carousel-dot-active:hover {
+    background-color: black;
+    cursor: auto;
+  }
+
+
+  .news-letter{
+    background-color: red;
+    height: 130px; /* Adjust the height of the section */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0 auto; /* Center the text */
+    
+    color: white; /* Change text color for better contrast */
+    align-self: center;
+    justify-self: center;
+    width: 35%}
+
+    .news-letter-content{
+        padding-left: 20px;
+        line-height: 2rem;
+    }
+    .news-letter-acknowledgement{
+        padding-left: 20px;
+        line-height: 2rem;
+    }
+
+    footer{
+        background-color: black;
+        color: white;
+    }
+
+
+    /* Scrollbar container */
+.c-scrollbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 7px;
+  height: 100vh;
+  z-index: 59;
+  pointer-events: none; /* Allows clicks to pass through if needed */
+}
+
+/* Scroll thumb */
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  background-color: #000;
+  opacity: 0.5;
+  cursor: grab;
+  z-index: 59;
+  pointer-events: auto; /* React to mouse events */
+}
+
+
+.explore{
+  padding-top:-20px;
+  height:100vh;
+  width: 100vw;
+  background-color: white;
+  color: blue;
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+
+.explore h2{
+  font-size: 10rem;
+  margin-top: 20px;
+  white-space: nowrap;
+  
+}
+
+#btnAbout{
+  height: 80px;
+  width: 160px;
+  background-color: blue;
+  color: white;
+  font-family: "futura", sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  font-size: 2rem;
+  
+  
+
+
+}

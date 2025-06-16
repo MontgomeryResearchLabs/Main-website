@@ -1,0 +1,132 @@
+
+footer{
+    height: fit-content;
+    background-color: black;
+    color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+  }
+  
+  .bottom-title{
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+  
+   
+  
+  }
+  
+  .bottom-title h1{
+    
+    color:red;
+    text-align: center;
+    font-size: 5.5rem;
+    animation: move-rtl 30000ms linear infinite;
+    white-space: nowrap;
+    padding: 0 1rem
+  }
+  
+  @keyframes move-rtl {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .socials-container{
+    display: flex;
+    gap: 20px;
+    
+    
+  }
+  
+  .socials-container a{
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 1em;
+    display: grid;
+    
+    place-items: center;
+    position: relative;
+    border-radius: 100%;
+  }
+  
+  .socials-container a svg{
+    height: 32px;
+    fill: white;
+  }
+  
+  .socials-container a::before{
+    content: attr(data-social);
+    position: absolute;
+    background-color: var(--accent-color);
+    
+    color: white;
+    text-decoration: none;
+    padding: .5em 1em;
+    border-radius: 100px;
+    transform: translateY(-30px) rotate(25deg);
+    opacity: 0;
+    transition: 200ms ease-in-out;
+  
+  }
+  
+  /*
+  .socials-container a:hover{
+    background-color: var(--accent-color);
+  
+  
+  }
+  */
+  
+  .socials-container a::after{
+   
+    opacity: 0;
+    transform: translateY(0) rotate(25deg);
+    
+  }
+  
+  .socials-container a:hover::before{
+    opacity: 1;
+    transform: translateY(-65px) rotate(0);
+  }
+  
+  .socials-container a:hover::after{
+    opacity: 1;
+    transform: translateY(-42px) rotate(0);
+  }
+  
+  .footer-container{
+    display: flex;
+    
+  }
+  
+
+  .contact-info{
+    height: 200px;
+    width:400px;
+    
+    color: white;
+    line-height: 1.5rem;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around
+  }
+  
+  
+  .contact-info a{
+    color: grey;
+    text-decoration: none;
+  }
+  .contact-info a:hover{
+    color: white;
+    text-decoration: underline;
+    transition: 200ms;;
+  }
+  
+  
