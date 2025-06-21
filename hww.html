@@ -30,7 +30,7 @@
     <section class = "navbar-section">
         <nav class ="navbar">
             <div class="logo">
-                <a href="/homepage.html">
+                <a href="/index.html">
                   <h3>MONTGOMERY RESEARCH LABS</h3>
                 </a>
                 
@@ -202,8 +202,6 @@ gsap.to(sections, {
     pin: true,
     scrub: 1,
     start: 'top top',
-    
-    snap: 1 / (sections.length - 1),
     end: () => '+=' + document.querySelector('.container').offsetWidth,
   }
 });
