@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 215 207" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,27.1995,23.1995)">
+        <g>
+            <path d="M80,59.5C91.3,59.5 100.5,68.7 100.5,80C100.5,91.3 91.3,100.5 80,100.5C68.7,100.5 59.5,91.3 59.5,80C59.5,68.7 68.7,59.5 80,59.5M80,40.5C58.2,40.5 40.5,58.2 40.5,80C40.5,101.8 58.2,119.5 80,119.5C101.8,119.5 119.5,101.8 119.5,80C119.5,58.2 101.8,40.5 80,40.5Z" style="fill:white;fill-rule:nonzero;stroke:white;stroke-width:1px;"/>
+            <path d="M118,110C121.3,110 124,112.7 124,116C124,119.3 121.3,122 118,122C114.7,122 112,119.3 112,116C112,112.7 114.7,110 118,110M118,102C110.3,102 104,108.3 104,116C104,123.7 110.3,130 118,130C125.7,130 132,123.7 132,116C132,108.3 125.7,102 118,102Z" style="fill:white;fill-rule:nonzero;stroke:white;stroke-width:1px;"/>
+            <path d="M42,110C45.3,110 48,112.7 48,116C48,119.3 45.3,122 42,122C38.7,122 36,119.3 36,116C36,112.7 38.7,110 42,110M42,102C34.3,102 28,108.3 28,116C28,123.7 34.3,130 42,130C49.7,130 56,123.7 56,116C56,108.3 49.7,102 42,102Z" style="fill:white;fill-rule:nonzero;stroke:white;stroke-width:1px;"/>
+            <path d="M42,38C45.3,38 48,40.7 48,44C48,47.3 45.3,50 42,50C38.7,50 36,47.3 36,44C36,40.7 38.7,38 42,38M42,30C34.3,30 28,36.3 28,44C28,51.7 34.3,58 42,58C49.7,58 56,51.7 56,44C56,36.3 49.7,30 42,30Z" style="fill:white;fill-rule:nonzero;stroke:white;stroke-width:1px;"/>
+            <path d="M118,38C121.3,38 124,40.7 124,44C124,47.3 121.3,50 118,50C114.7,50 112,47.3 112,44C112,40.7 114.7,38 118,38M118,30C110.3,30 104,36.3 104,44C104,51.7 110.3,58 118,58C125.7,58 132,51.7 132,44C132,36.3 125.7,30 118,30Z" style="fill:white;fill-rule:nonzero;stroke:white;stroke-width:1px;"/>
+            <path d="M40,17L120,17" style="fill:none;fill-rule:nonzero;stroke:white;stroke-width:8px;stroke-linejoin:miter;stroke-miterlimit:10;"/>
+            <path d="M40,143L120,143" style="fill:none;fill-rule:nonzero;stroke:white;stroke-width:8px;stroke-linejoin:miter;stroke-miterlimit:10;"/>
+            <path d="M13,40L13,120" style="fill:none;fill-rule:nonzero;stroke:white;stroke-width:8px;stroke-linejoin:miter;stroke-miterlimit:10;"/>
+            <path d="M147,120L147,40" style="fill:none;fill-rule:nonzero;stroke:white;stroke-width:8px;stroke-linejoin:miter;stroke-miterlimit:10;"/>
+        </g>
+    </g>
+</svg>

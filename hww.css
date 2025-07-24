@@ -1,0 +1,1849 @@
+
+@media only screen and (max-width: 576px){
+
+  *{
+    box-sizing:border-box;
+}
+
+.c-scrollbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 7px;
+    height: 100vh;
+    z-index: 59;
+    pointer-events: none; /* Allows clicks to pass through if needed */
+  }
+  
+  /* Scroll thumb */
+  .c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+    background-color: #000;
+    opacity: 0.5;
+    cursor: grab;
+    z-index: 59;
+    pointer-events: auto; /* React to mouse events */
+  }
+  
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'futura', sans-serif;
+    
+    
+}
+
+.panel{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    flex-shrink: 0;
+    
+
+   
+
+}
+
+.panel h2{
+    font-size: 3rem;
+    margin-left:30px;
+    
+    
+}
+
+
+
+.container {
+    height: 100vh;
+    display: flex;
+    
+    position: relative;
+}
+
+.title-section {
+  background-color: blue; /* light grey or your preferred color */
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.title{
+    
+    
+    font-size: 3.1rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: left;
+    height: fit-content;
+    margin-top: 0;
+    
+
+}
+
+.explore{
+    padding-top:-20px;
+    height:100vh;
+    width: 100vw;
+    background-color: blue;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+
+.explore h2{
+    font-size: 10rem;
+    margin-top: 20px;
+    
+}
+
+#btnAbout{
+    height: 80px;
+    width: 160px;
+    background-color: red;
+    color: white;
+    font-family: "futura", sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    
+
+
+}
+
+
+main {
+    
+    overflow-x: hidden;
+    margin-bottom: 0;
+}
+
+.container p{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto; /* Enables optical sizing */
+    font-weight: 200;          /* Lightest weight */
+    font-style: normal;
+    font-size: 1.7rem;
+    margin-left: 30px;
+    margin-right: 30px;
+    justify-content: last baseline;
+}
+
+.container .panel:nth-child(1){
+    background-color: blue;
+    color: white;
+}
+.container .panel:nth-child(2){
+    background-color: white;
+    color: red;
+}
+.container .panel:nth-child(3){
+    background-color: rgb(255, 111, 0);
+    color: white;
+}
+.container .panel:nth-child(4){
+    background-color: white;
+    color: black;
+}
+.container .panel:nth-child(5){
+    background-color: rgb(255, 213, 0);
+    color: rgb(83, 82, 81);
+}
+.container .panel:nth-child(6){
+    background-color: rgb(7, 54, 10);
+    color: rgb(31, 150, 39);
+
+}
+/* */
+
+
+
+/* begin navbar*/  
+
+
+  .navbar{
+    display: flex;
+    justify-content: space-between; /* space between logo and hamburger */
+    align-items: center;  
+    
+    height: 100px;
+    backdrop-filter: blur(5px);  /* Apply blur effect */
+    background-color: blue;
+    
+
+}
+
+nav li{
+
+    
+  text-decoration: none;
+  
+  list-style: none;
+  padding: 10px;
+}
+
+.navbar.sticky{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    mix-blend-mode: difference;
+    background-color: rgba(0, 0, 0, 1)
+    
+}
+
+
+
+.sticky-active {
+    padding-top: 100px;
+    background-color: blue; /* Adjust this based on the height of your navbar */
+  }
+
+
+  .logo{
+    display: flex;
+    
+    align-items: center;
+    padding-left: 10px;
+    mix-blend-mode: difference;
+    color: white; /* Starting color for text before blend */
+    
+    
+  }
+
+  .logo img{
+    
+    
+    margin-right: 10px; /* Space between logo and text */
+    mix-blend-mode: difference;
+  }
+/* end navbar*/  
+
+/* menu begin */
+
+
+
+
+.hamburger {
+    
+  mix-blend-mode: difference;
+  color: white; /* Starting color for text before blend */
+  
+  padding-right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+
+  font-weight: bold;
+  text-decoration: underline;
+  
+  
+
+}
+
+
+
+.hamburger.active {
+  color: white;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hide off-screen by default */
+  width: 400px;
+  height: 100vh;
+  background-color: rgb(42, 42, 42); /* Semi-transparent background */
+  mix-blend-mode: normal;
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 990;
+  overflow-y: auto;     
+  font-size: 2rem;
+  
+}
+
+
+
+.side-menu li {
+  list-style: none;
+  padding: 5px;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Side menu active (slide in) */
+.side-menu.active {
+  right: 0;
+}
+
+.menu-content {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+  color: white;
+}
+
+/* When menu is open, fade in content */
+.side-menu.active .menu-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Close the side menu when clicked outside */
+body.open .side-menu {
+  right: 0;
+}
+
+body.menu-open .navbar.sticky {
+  background-color: rgba(0, 0, 0, 0.85); /* Add a solid background to cancel blend issues */
+  mix-blend-mode: normal;
+}
+
+a {
+  text-decoration: none;  /* Removes underline */
+  color: inherit;         /* Inherit color from parent, or you can set any color like #000 or #333 */
+}
+
+
+/* end menu */
+
+/* Circle around the cursor */
+.cursor {
+  position: fixed;
+top: 0;
+left: 0;
+width: 40px;
+height: 40px;
+background: white;
+border-radius: 50%;
+pointer-events: none;
+z-index: 10000;
+transform: translate3d(0, 0, 0);
+mix-blend-mode: difference; /* Negative color effect */
+}
+
+/* end cursor */
+
+/* begin load animation*/
+
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Background color of the loader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it stays above other content */
+  transition: opacity 0.75s, visibility 0.75s; /* Smooth fade-out effect */
+}
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden; /* Hide the loader */
+}
+
+
+
+}
+@media only screen and (min-width: 576px){
+
+  *{
+    box-sizing:border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'futura', sans-serif;
+    
+}
+
+.panel{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    flex-shrink: 0;
+    
+
+   
+
+}
+
+.panel h2{
+    font-size: 3.2rem;
+    margin-left:30px;
+    
+    
+}
+
+
+
+.container {
+    height: 100vh;
+    display: flex;
+    
+    position: relative;
+}
+
+.c-scrollbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 7px;
+    height: 100vh;
+    z-index: 59;
+    pointer-events: none; /* Allows clicks to pass through if needed */
+  }
+  
+  /* Scroll thumb */
+  .c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+    background-color: #000;
+    opacity: 0.5;
+    cursor: grab;
+    z-index: 59;
+    pointer-events: auto; /* React to mouse events */
+  }
+  
+
+.title-section {
+  background-color: blue; /* light grey or your preferred color */
+
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.title{
+    
+    
+    font-size: 4.1rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: left;
+    height: fit-content;
+    margin-top: 0;
+    
+
+}
+
+.explore{
+    padding-top:-20px;
+    height:100vh;
+    width: 100vw;
+    background-color: blue;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+
+.explore h2{
+    font-size: 10rem;
+    margin-top: 20px;
+    
+}
+
+#btnAbout{
+    height: 80px;
+    width: 160px;
+    background-color: red;
+    color: white;
+    font-family: "futura", sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    
+
+
+}
+
+
+main {
+    
+    overflow-x: hidden;
+}
+
+.container p{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto; /* Enables optical sizing */
+    font-weight: 200;          /* Lightest weight */
+    font-style: normal;
+    font-size: 1.8rem;
+    margin-left: 30px;
+    margin-right: 30px;
+    justify-content: last baseline;
+}
+
+.container .panel:nth-child(1){
+    background-color: blue;
+    color: white;
+}
+.container .panel:nth-child(2){
+    background-color: white;
+    color: red;
+}
+.container .panel:nth-child(3){
+    background-color: rgb(255, 111, 0);
+    color: white;
+}
+.container .panel:nth-child(4){
+    background-color: white;
+    color: black;
+}
+.container .panel:nth-child(5){
+    background-color: rgb(255, 213, 0);
+    color: rgb(83, 82, 81);
+}
+.container .panel:nth-child(6){
+    background-color: rgb(7, 54, 10);
+    color: rgb(31, 150, 39);
+
+}
+/* */
+
+
+
+/* begin navbar*/  
+
+
+  .navbar{
+    display: flex;
+    justify-content: space-between; /* space between logo and hamburger */
+    align-items: center;  
+    
+    height: 100px;
+    backdrop-filter: blur(5px);  /* Apply blur effect */
+    background-color: blue;
+    
+
+}
+
+nav li{
+
+    
+  text-decoration: none;
+  
+  list-style: none;
+  padding: 10px;
+}
+
+.navbar.sticky{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    mix-blend-mode: difference;
+    background-color: rgba(0, 0, 0, 1)
+    
+}
+
+
+
+.sticky-active {
+    padding-top: 100px;
+    background-color: blue; /* Adjust this based on the height of your navbar */
+  }
+
+
+  .logo{
+    display: flex;
+    
+    align-items: center;
+    padding-left: 10px;
+    mix-blend-mode: difference;
+    color: white; /* Starting color for text before blend */
+    
+    
+  }
+
+  .logo img{
+    
+    
+    margin-right: 10px; /* Space between logo and text */
+    mix-blend-mode: difference;
+  }
+/* end navbar*/  
+
+/* menu begin */
+
+
+
+
+.hamburger {
+    
+  mix-blend-mode: difference;
+  color: white; /* Starting color for text before blend */
+  
+  padding-right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+
+  font-weight: bold;
+  text-decoration: underline;
+  
+  
+
+}
+
+
+
+.hamburger.active {
+  color: white;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hide off-screen by default */
+  width: 400px;
+  height: 100vh;
+  background-color: rgb(42, 42, 42); /* Semi-transparent background */
+  mix-blend-mode: normal;
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 990;
+  overflow-y: auto;     
+  font-size: 2rem;
+  
+}
+
+
+
+.side-menu li {
+  list-style: none;
+  padding: 5px;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Side menu active (slide in) */
+.side-menu.active {
+  right: 0;
+}
+
+.menu-content {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+  color: white;
+}
+
+/* When menu is open, fade in content */
+.side-menu.active .menu-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Close the side menu when clicked outside */
+body.open .side-menu {
+  right: 0;
+}
+
+body.menu-open .navbar.sticky {
+  background-color: rgba(0, 0, 0, 0.85); /* Add a solid background to cancel blend issues */
+  mix-blend-mode: normal;
+}
+
+a {
+  text-decoration: none;  /* Removes underline */
+  color: inherit;         /* Inherit color from parent, or you can set any color like #000 or #333 */
+}
+
+
+/* end menu */
+
+/* Circle around the cursor */
+.cursor {
+  position: fixed;
+top: 0;
+left: 0;
+width: 40px;
+height: 40px;
+background: white;
+border-radius: 50%;
+pointer-events: none;
+z-index: 10000;
+transform: translate3d(0, 0, 0);
+mix-blend-mode: difference; /* Negative color effect */
+}
+
+/* end cursor */
+
+/* begin load animation*/
+
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Background color of the loader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it stays above other content */
+  transition: opacity 0.75s, visibility 0.75s; /* Smooth fade-out effect */
+}
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden; /* Hide the loader */
+}
+
+
+}
+@media only screen and (min-width: 768px){
+
+  *{
+    box-sizing:border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'futura', sans-serif;
+    
+}
+
+.panel{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    flex-shrink: 0;
+    
+
+   
+
+}
+
+.panel h2{
+    font-size: 3.4rem;
+    margin-left:30px;
+    
+    
+}
+
+
+
+.container {
+    height: 100vh;
+    display: flex;
+    
+    position: relative;
+}
+
+.c-scrollbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 7px;
+    height: 100vh;
+    z-index: 59;
+    pointer-events: none; /* Allows clicks to pass through if needed */
+  }
+  
+  /* Scroll thumb */
+  .c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+    background-color: #000;
+    opacity: 0.5;
+    cursor: grab;
+    z-index: 59;
+    pointer-events: auto; /* React to mouse events */
+  }
+  
+
+.title-section {
+  background-color: blue; /* light grey or your preferred color */
+
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.title{
+    
+    
+    font-size: 3.0rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    white-space: nowrap;
+    height: fit-content;
+    margin-top: 0;
+    
+
+}
+
+.explore{
+    padding-top:-20px;
+    height:100vh;
+    width: 100vw;
+    background-color: blue;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+
+.explore h2{
+    font-size: 10rem;
+    margin-top: 20px;
+    
+}
+
+#btnAbout{
+    height: 80px;
+    width: 160px;
+    background-color: red;
+    color: white;
+    font-family: "futura", sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    
+
+
+}
+
+
+main {
+    
+    overflow-x: hidden;
+}
+
+.container p{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto; /* Enables optical sizing */
+    font-weight: 200;          /* Lightest weight */
+    font-style: normal;
+    font-size: 1.9rem;
+    margin-left: 30px;
+    margin-right: 30px;
+    justify-content: last baseline;
+}
+
+.container .panel:nth-child(1){
+    background-color: blue;
+    color: white;
+}
+.container .panel:nth-child(2){
+    background-color: white;
+    color: red;
+}
+.container .panel:nth-child(3){
+    background-color: rgb(255, 111, 0);
+    color: white;
+}
+.container .panel:nth-child(4){
+    background-color: white;
+    color: black;
+}
+.container .panel:nth-child(5){
+    background-color: rgb(255, 213, 0);
+    color: rgb(83, 82, 81);
+}
+.container .panel:nth-child(6){
+    background-color: rgb(7, 54, 10);
+    color: rgb(31, 150, 39);
+
+}
+/* */
+
+
+
+/* begin navbar*/  
+
+
+  .navbar{
+    display: flex;
+    justify-content: space-between; /* space between logo and hamburger */
+    align-items: center;  
+    
+    height: 100px;
+    backdrop-filter: blur(5px);  /* Apply blur effect */
+    background-color: blue;
+    
+
+}
+
+nav li{
+
+    
+  text-decoration: none;
+  
+  list-style: none;
+  padding: 10px;
+}
+
+.navbar.sticky{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    mix-blend-mode: difference;
+    background-color: rgba(0, 0, 0, 1)
+    
+}
+
+
+
+.sticky-active {
+    padding-top: 100px;
+    background-color: blue; /* Adjust this based on the height of your navbar */
+  }
+
+
+  .logo{
+    display: flex;
+    
+    align-items: center;
+    padding-left: 10px;
+    mix-blend-mode: difference;
+    color: white; /* Starting color for text before blend */
+    
+    
+  }
+
+  .logo img{
+    
+    
+    margin-right: 10px; /* Space between logo and text */
+    mix-blend-mode: difference;
+  }
+/* end navbar*/  
+
+/* menu begin */
+
+
+
+
+.hamburger {
+    
+  mix-blend-mode: difference;
+  color: white; /* Starting color for text before blend */
+  
+  padding-right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+
+  font-weight: bold;
+  text-decoration: underline;
+  
+  
+
+}
+
+
+
+.hamburger.active {
+  color: white;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hide off-screen by default */
+  width: 400px;
+  height: 100vh;
+  background-color: rgb(42, 42, 42); /* Semi-transparent background */
+  mix-blend-mode: normal;
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 990;
+  overflow-y: auto;     
+  font-size: 2rem;
+  
+}
+
+
+
+.side-menu li {
+  list-style: none;
+  padding: 5px;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Side menu active (slide in) */
+.side-menu.active {
+  right: 0;
+}
+
+.menu-content {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+  color: white;
+}
+
+/* When menu is open, fade in content */
+.side-menu.active .menu-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Close the side menu when clicked outside */
+body.open .side-menu {
+  right: 0;
+}
+
+body.menu-open .navbar.sticky {
+  background-color: rgba(0, 0, 0, 0.85); /* Add a solid background to cancel blend issues */
+  mix-blend-mode: normal;
+}
+
+a {
+  text-decoration: none;  /* Removes underline */
+  color: inherit;         /* Inherit color from parent, or you can set any color like #000 or #333 */
+}
+
+
+/* end menu */
+
+/* Circle around the cursor */
+.cursor {
+  position: fixed;
+top: 0;
+left: 0;
+width: 40px;
+height: 40px;
+background: white;
+border-radius: 50%;
+pointer-events: none;
+z-index: 10000;
+transform: translate3d(0, 0, 0);
+mix-blend-mode: difference; /* Negative color effect */
+}
+
+/* end cursor */
+
+/* begin load animation*/
+
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Background color of the loader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it stays above other content */
+  transition: opacity 0.75s, visibility 0.75s; /* Smooth fade-out effect */
+}
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden; /* Hide the loader */
+}
+
+
+}
+@media only screen and (min-width: 992px){
+
+  *{
+    box-sizing:border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'futura', sans-serif;
+    
+}
+
+.panel{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    flex-shrink: 0;
+    
+
+   
+
+}
+
+.panel h2{
+    font-size: 3.6rem;
+    margin-left:30px;
+    
+    
+}
+
+
+
+.container {
+    height: 100vh;
+    display: flex;
+    
+    position: relative;
+}
+
+.c-scrollbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 7px;
+    height: 100vh;
+    z-index: 59;
+    pointer-events: none; /* Allows clicks to pass through if needed */
+  }
+  
+  /* Scroll thumb */
+  .c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+    background-color: #000;
+    opacity: 0.5;
+    cursor: grab;
+    z-index: 59;
+    pointer-events: auto; /* React to mouse events */
+  }
+  
+
+.title-section {
+  background-color: blue; /* light grey or your preferred color */
+
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.title{
+    
+    
+    font-size: 4rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: left;
+    height: fit-content;
+    margin-top: 0;
+    
+
+}
+
+.explore{
+    padding-top:-20px;
+    height:100vh;
+    width: 100vw;
+    background-color: blue;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+
+.explore h2{
+    font-size: 10rem;
+    margin-top: 20px;
+    
+}
+
+#btnAbout{
+    height: 80px;
+    width: 160px;
+    background-color: red;
+    color: white;
+    font-family: "futura", sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    
+
+
+}
+
+
+main {
+    
+    overflow-x: hidden;
+}
+
+.container p{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto; /* Enables optical sizing */
+    font-weight: 200;          /* Lightest weight */
+    font-style: normal;
+    font-size: 2rem;
+    margin-left: 30px;
+    margin-right: 30px;
+    justify-content: last baseline;
+}
+
+.container .panel:nth-child(1){
+    background-color: blue;
+    color: white;
+}
+.container .panel:nth-child(2){
+    background-color: white;
+    color: red;
+}
+.container .panel:nth-child(3){
+    background-color: rgb(255, 111, 0);
+    color: white;
+}
+.container .panel:nth-child(4){
+    background-color: white;
+    color: black;
+}
+.container .panel:nth-child(5){
+    background-color: rgb(255, 213, 0);
+    color: rgb(83, 82, 81);
+}
+.container .panel:nth-child(6){
+    background-color: rgb(7, 54, 10);
+    color: rgb(31, 150, 39);
+
+}
+/* */
+
+
+
+/* begin navbar*/  
+
+
+  .navbar{
+    display: flex;
+    justify-content: space-between; /* space between logo and hamburger */
+    align-items: center;  
+    
+    height: 100px;
+    backdrop-filter: blur(5px);  /* Apply blur effect */
+    background-color: blue;
+    
+
+}
+
+nav li{
+
+    
+  text-decoration: none;
+  
+  list-style: none;
+  padding: 10px;
+}
+
+.navbar.sticky{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    mix-blend-mode: difference;
+    background-color: rgba(0, 0, 0, 1)
+    
+}
+
+
+
+.sticky-active {
+    padding-top: 100px;
+    background-color: blue; /* Adjust this based on the height of your navbar */
+  }
+
+
+  .logo{
+    display: flex;
+    
+    align-items: center;
+    padding-left: 10px;
+    mix-blend-mode: difference;
+    color: white; /* Starting color for text before blend */
+    
+    
+  }
+
+  .logo img{
+    
+    
+    margin-right: 10px; /* Space between logo and text */
+    mix-blend-mode: difference;
+  }
+/* end navbar*/  
+
+/* menu begin */
+
+
+
+
+.hamburger {
+    
+  mix-blend-mode: difference;
+  color: white; /* Starting color for text before blend */
+  
+  padding-right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+
+  font-weight: bold;
+  text-decoration: underline;
+  
+  
+
+}
+
+
+
+.hamburger.active {
+  color: white;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hide off-screen by default */
+  width: 400px;
+  height: 100vh;
+  background-color: rgb(42, 42, 42); /* Semi-transparent background */
+  mix-blend-mode: normal;
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 990;
+  overflow-y: auto;     
+  font-size: 2rem;
+  
+}
+
+
+
+.side-menu li {
+  list-style: none;
+  padding: 5px;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Side menu active (slide in) */
+.side-menu.active {
+  right: 0;
+}
+
+.menu-content {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+  color: white;
+}
+
+/* When menu is open, fade in content */
+.side-menu.active .menu-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Close the side menu when clicked outside */
+body.open .side-menu {
+  right: 0;
+}
+
+body.menu-open .navbar.sticky {
+  background-color: rgba(0, 0, 0, 0.85); /* Add a solid background to cancel blend issues */
+  mix-blend-mode: normal;
+}
+
+a {
+  text-decoration: none;  /* Removes underline */
+  color: inherit;         /* Inherit color from parent, or you can set any color like #000 or #333 */
+}
+
+
+/* end menu */
+
+/* Circle around the cursor */
+.cursor {
+  position: fixed;
+top: 0;
+left: 0;
+width: 40px;
+height: 40px;
+background: white;
+border-radius: 50%;
+pointer-events: none;
+z-index: 10000;
+transform: translate3d(0, 0, 0);
+mix-blend-mode: difference; /* Negative color effect */
+}
+
+/* end cursor */
+
+/* begin load animation*/
+
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Background color of the loader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it stays above other content */
+  transition: opacity 0.75s, visibility 0.75s; /* Smooth fade-out effect */
+}
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden; /* Hide the loader */
+}
+
+
+}
+@media only screen and (min-width: 1200px){
+
+  *{
+    box-sizing:border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'futura', sans-serif;
+    
+}
+
+.panel{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    flex-shrink: 0;
+    
+
+   
+
+}
+
+.panel h2{
+    font-size: 4rem;
+    margin-left:30px;
+    
+    
+}
+
+
+
+.container {
+    height: 100vh;
+    display: flex;
+    
+    position: relative;
+}
+
+.c-scrollbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 7px;
+    height: 100vh;
+    z-index: 59;
+    pointer-events: none; /* Allows clicks to pass through if needed */
+  }
+  
+  /* Scroll thumb */
+  .c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+    background-color: #000;
+    opacity: 0.5;
+    cursor: grab;
+    z-index: 59;
+    pointer-events: auto; /* React to mouse events */
+  }
+  
+
+.title-section {
+  background-color: blue; /* light grey or your preferred color */
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.title{
+    
+    
+    font-size: 6rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    white-space: nowrap;
+    height: fit-content;
+    margin-top: 0;
+    
+
+}
+
+.explore{
+    padding-top:-20px;
+    height:100vh;
+    width: 100vw;
+    background-color: blue;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+
+.explore h2{
+    font-size: 10rem;
+    margin-top: 20px;
+    
+}
+
+#btnAbout{
+    height: 80px;
+    width: 160px;
+    background-color: red;
+    color: white;
+    font-family: "futura", sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    
+
+
+}
+
+
+main {
+    
+    overflow-x: hidden;
+}
+
+.container p{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto; /* Enables optical sizing */
+    font-weight: 200;          /* Lightest weight */
+    font-style: normal;
+    font-size: 2rem;
+    margin-left: 30px;
+    margin-right: 30px;
+    justify-content: last baseline;
+}
+
+.container .panel:nth-child(1){
+    background-color: blue;
+    color: white;
+}
+.container .panel:nth-child(2){
+    background-color: white;
+    color: red;
+}
+.container .panel:nth-child(3){
+    background-color: rgb(255, 111, 0);
+    color: white;
+}
+.container .panel:nth-child(4){
+    background-color: white;
+    color: black;
+}
+.container .panel:nth-child(5){
+    background-color: rgb(255, 213, 0);
+    color: rgb(83, 82, 81);
+}
+.container .panel:nth-child(6){
+    background-color: rgb(7, 54, 10);
+    color: rgb(31, 150, 39);
+
+}
+/* */
+
+
+
+/* begin navbar*/  
+
+
+  .navbar{
+    display: flex;
+    justify-content: space-between; /* space between logo and hamburger */
+    align-items: center;  
+    
+    height: 100px;
+    backdrop-filter: blur(5px);  /* Apply blur effect */
+    background-color: blue;
+    
+
+}
+
+nav li{
+
+    
+  text-decoration: none;
+  
+  list-style: none;
+  padding: 10px;
+}
+
+.navbar.sticky{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    mix-blend-mode: difference;
+    background-color: rgba(0, 0, 0, 1)
+    
+}
+
+
+
+.sticky-active {
+    padding-top: 100px;
+    background-color: blue; /* Adjust this based on the height of your navbar */
+  }
+
+
+  .logo{
+    display: flex;
+    
+    align-items: center;
+    padding-left: 10px;
+    mix-blend-mode: difference;
+    color: white; /* Starting color for text before blend */
+    
+    
+  }
+
+  .logo img{
+    
+    
+    margin-right: 10px; /* Space between logo and text */
+    mix-blend-mode: difference;
+  }
+/* end navbar*/  
+
+/* menu begin */
+
+
+
+
+.hamburger {
+    
+  mix-blend-mode: difference;
+  color: white; /* Starting color for text before blend */
+  
+  padding-right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+
+  font-weight: bold;
+  text-decoration: underline;
+  
+  
+
+}
+
+
+
+.hamburger.active {
+  color: white;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hide off-screen by default */
+  width: 400px;
+  height: 100vh;
+  background-color: rgb(42, 42, 42); /* Semi-transparent background */
+  mix-blend-mode: normal;
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 990;
+  overflow-y: auto;     
+  font-size: 2rem;
+  
+}
+
+
+
+.side-menu li {
+  list-style: none;
+  padding: 5px;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Side menu active (slide in) */
+.side-menu.active {
+  right: 0;
+}
+
+.menu-content {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+  color: white;
+}
+
+/* When menu is open, fade in content */
+.side-menu.active .menu-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Close the side menu when clicked outside */
+body.open .side-menu {
+  right: 0;
+}
+
+body.menu-open .navbar.sticky {
+  background-color: rgba(0, 0, 0, 0.85); /* Add a solid background to cancel blend issues */
+  mix-blend-mode: normal;
+}
+
+a {
+  text-decoration: none;  /* Removes underline */
+  color: inherit;         /* Inherit color from parent, or you can set any color like #000 or #333 */
+}
+
+
+/* end menu */
+
+/* Circle around the cursor */
+.cursor {
+  position: fixed;
+top: 0;
+left: 0;
+width: 40px;
+height: 40px;
+background: white;
+border-radius: 50%;
+pointer-events: none;
+z-index: 10000;
+transform: translate3d(0, 0, 0);
+mix-blend-mode: difference; /* Negative color effect */
+}
+
+/* end cursor */
+
+/* begin load animation*/
+
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Background color of the loader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it stays above other content */
+  transition: opacity 0.75s, visibility 0.75s; /* Smooth fade-out effect */
+}
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden; /* Hide the loader */
+}
+
+
+}
+@media only screen and (min-width: 1400px){}
+

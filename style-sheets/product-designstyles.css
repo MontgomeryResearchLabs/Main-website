@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+   
+    
+    
+  }
+/* begin navbar*/  
+
+
+  .navbar{
+    display: flex;
+    justify-content: space-between; /* space between logo and hamburger */
+    align-items: center;  
+    
+    height: 100px;
+    backdrop-filter: blur(5px);  /* Apply blur effect */
+    background-color: black;
+    
+
+}
+
+nav li{
+
+    
+  text-decoration: none;
+  
+  list-style: none;
+  padding: 10px;
+}
+
+.navbar.sticky{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    mix-blend-mode: difference;
+    background-color:rgba(0, 0, 0, 1)
+
+    
+}
+
+
+
+
+.sticky-active {
+    padding-top: 100px;
+    background-color: black; /* Adjust this based on the height of your navbar */
+  }
+
+
+  .logo{
+    display: flex;
+    
+    align-items: center;
+    padding-left: 10px;
+    mix-blend-mode: difference;
+    color: white; /* Starting color for text before blend */
+    
+    
+  }
+
+  .logo img{
+    
+    
+    margin-right: 10px; /* Space between logo and text */
+    mix-blend-mode: difference;
+  }
+/* end navbar*/  
+
+/* menu begin */
+
+
+
+
+.hamburger {
+    
+  mix-blend-mode: difference;
+  color: white; /* Starting color for text before blend */
+  
+  padding-right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+
+  font-weight: bold;
+  text-decoration: underline;
+  
+  
+
+}
+
+
+
+.hamburger.active {
+  color: white;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hide off-screen by default */
+  width: 400px;
+  height: 100vh;
+  backdrop-filter: blur(5px);  /* Apply blur effect */
+  background-color: rgb(42, 42, 42); /* Semi-transparent background */
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 999;
+  overflow-y: auto;     
+  font-size: 2rem;
+}
+
+
+
+
+
+.side-menu li {
+  
+  list-style: none;
+  padding: 5px;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Side menu active (slide in) */
+.side-menu.active {
+  right: 0;
+}
+
+.menu-content {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+  color: white;
+}
+
+/* When menu is open, fade in content */
+.side-menu.active .menu-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Close the side menu when clicked outside */
+body.open .side-menu {
+  right: 0;
+}
+
+body.menu-open .navbar.sticky {
+  background-color: rgba(0, 0, 0, 0.85); /* Add a solid background to cancel blend issues */
+  mix-blend-mode: normal;
+}
+
+a {
+  text-decoration: none;  /* Removes underline */
+  color: inherit;         /* Inherit color from parent, or you can set any color like #000 or #333 */
+}
+
+
+/* end menu */
+
+/* Circle around the cursor */
+.cursor {
+  position: fixed;
+top: 0;
+left: 0;
+width: 40px;
+height: 40px;
+background: white;
+border-radius: 50%;
+pointer-events: none;
+z-index: 10000;
+transform: translate3d(0, 0, 0);
+mix-blend-mode: difference; /* Negative color effect */
+}
+
+/* end cursor */
+
+/* begin load animation*/
+
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Background color of the loader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it stays above other content */
+  transition: opacity 0.75s, visibility 0.75s; /* Smooth fade-out effect */
+}
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden; /* Hide the loader */
+}
+
+/* end load animation*/
+
+/* INCLUDE EVERYTHING ABOVE ON EVERY PAGE */
+
+
+  
+.hero{
+
+    height: 100vh; /* Adjust the height of the section */
+    color: black; /* Change text color for better contrast */
+    text-align: center;
+    align-items: center;
+    
+    
+}
+
+.hero h1{
+    font-size: 3rem;
+    color: black;
+    padding-top: 200px;
+    padding-bottom: 150px;
+}
+
+.hero-text{
+   text-align: center;
+   max-width: 500px;
+   margin: 0 auto; /* Center the text */
+ 
+}
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  body {
+    overflow-x: hidden; /* Prevent horizontal overflow when menu is not visible */
+    font-family: 'futura', sans-serif;
+
+  }
+
+
+  header{
+    width: 75%;
+    margin: 0 auto; /* Center the header */
+    color: white; /* Change text color for better contrast */
+  }
+  header h2{
+    padding-top: 100px;
+    text-align: left;
+    font-size: 2.5rem;
+    
+
+
+  }
+
+  .anti-hero {
+    display: flex;
+    direction: ltr;
+    justify-content: space-between;
+    color:white;
+    padding-left: 30px;
+    padding-bottom: 30px;
+
+  }
+
+ 
+
+
+
+  
+ 
+
+    footer{
+        background-color: black;
+        color: white;
+    }
+
+
+    /* Scrollbar container */
+.c-scrollbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 7px;
+  height: 100vh;
+  z-index: 59;
+  pointer-events: none; /* Allows clicks to pass through if needed */
+}
+
+/* Scroll thumb */
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  background-color: #000;
+  opacity: 0.5;
+  cursor: grab;
+  z-index: 59;
+  pointer-events: auto; /* React to mouse events */
+}
+
+
+.svgwrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between SVGs */
+    padding-top: 20px;
+}
+
+
+.explore{
+  padding-top:-20px;
+  height:100vh;
+  width: 100vw;
+  background-color: black;
+  color: red;
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+
+.explore h2{
+  font-size: 10rem;
+  margin-top: 20px;
+  white-space: nowrap;
+  
+}
+
+#btnAbout{
+  height: 80px;
+  width: 160px;
+  background-color: white;
+  color: black;
+  font-family: "futura", sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  font-size: 2rem;
+  border: solid 4px black;
+  
+
+
+}

@@ -1,0 +1,771 @@
+
+@media only screen and (max-width: 576px){
+
+
+.web-design h2{
+    
+    
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  align-self: center;
+  font-size: 3rem;
+  z-index: 1000;
+  inset: 50px 100px 50px 100px;
+  white-space: nowrap;
+  
+
+
+}
+
+.software{
+  height: 100vh;
+  background-color: black;
+  color: #76CD26;
+  font-family: 'Courier New', Courier, monospace;
+  padding-left: 10px;
+  padding-top: 30px;
+}
+
+.terminal-input {
+  background-color: black;
+  color: white;
+  border: none;
+  outline: none;
+  font: inherit;
+  padding: 4px 8px;
+}
+
+
+
+
+.product-design{
+  background-color: white;
+  min-height: 100vh; 
+  
+  
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  
+  
+}
+/* begin navbar*/  
+
+
+.navbar{
+  display: flex;
+  justify-content: space-between; /* space between logo and hamburger */
+  align-items: center;  
+  
+  height: 100px;
+  backdrop-filter: blur(5px);  /* Apply blur effect */
+  background-color: white;
+  
+
+}
+
+nav li{
+
+  
+text-decoration: none;
+
+list-style: none;
+padding: 10px;
+}
+
+.navbar.sticky{
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  mix-blend-mode: difference;
+  background-color:rgba(0, 0, 0, 1)
+
+  
+}
+
+
+
+.sticky-active {
+  padding-top: 100px;
+  background-color: white; /* Adjust this based on the height of your navbar */
+}
+
+
+.logo{
+  display: flex;
+  
+  align-items: center;
+  padding-left: 10px;
+  mix-blend-mode: difference;
+  color: white; /* Starting color for text before blend */
+  
+  
+}
+
+.logo img{
+  
+  
+  margin-right: 10px; /* Space between logo and text */
+  mix-blend-mode: difference;
+}
+/* end navbar*/  
+
+/* menu begin */
+
+
+
+
+.hamburger {
+  
+mix-blend-mode: difference;
+color: white; /* Starting color for text before blend */
+
+padding-right: 20px;
+cursor: pointer;
+z-index: 1000;
+
+font-weight: bold;
+text-decoration: underline;
+
+
+
+}
+
+
+
+.hamburger.active {
+color: white;
+}
+
+.side-menu {
+position: fixed;
+top: 0;
+right: -450px; /* Hide off-screen by default */
+width: 400px;
+height: 100vh;
+background-color: rgb(42, 42, 42); /* Semi-transparent background */
+mix-blend-mode: normal;
+color: white;
+padding: 20px;
+transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+z-index: 990;
+overflow-y: auto;     
+font-size: 2rem;
+
+}
+
+
+
+.side-menu li {
+list-style: none;
+padding: 5px;
+}
+
+.side-menu ul li {
+margin: 20px 0;
+}
+
+.side-menu ul li a {
+color: white;
+text-decoration: none;
+font-size: 18px;
+}
+
+/* Side menu active (slide in) */
+.side-menu.active {
+right: 0;
+}
+
+.menu-content {
+opacity: 0;
+transform: translateX(20px);
+transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+color: white;
+}
+
+/* When menu is open, fade in content */
+.side-menu.active .menu-content {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* Optional: Close the side menu when clicked outside */
+body.open .side-menu {
+right: 0;
+}
+
+body.menu-open .navbar.sticky {
+background-color: rgba(0, 0, 0, 0.85); /* Add a solid background to cancel blend issues */
+mix-blend-mode: normal;
+}
+
+a {
+text-decoration: none;  /* Removes underline */
+color: inherit;         /* Inherit color from parent, or you can set any color like #000 or #333 */
+}
+
+
+/* end menu */
+
+/* Circle around the cursor */
+.cursor {
+position: fixed;
+top: 0;
+left: 0;
+width: 40px;
+height: 40px;
+background: white;
+border-radius: 50%;
+pointer-events: none;
+z-index: 10000;
+transform: translate3d(0, 0, 0);
+mix-blend-mode: difference; /* Negative color effect */
+}
+
+/* end cursor */
+
+/* begin load animation*/
+
+.loader{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: white; /* Background color of the loader */
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 9999; /* Ensure it stays above other content */
+transition: opacity 0.75s, visibility 0.75s; /* Smooth fade-out effect */
+}
+.loader.hidden {
+opacity: 0;
+visibility: hidden; /* Hide the loader */
+}
+
+/* end load animation*/
+
+/* INCLUDE EVERYTHING ABOVE ON EVERY PAGE */
+
+
+
+
+
+
+
+
+
+body {
+  overflow-x: hidden; /* Prevent horizontal overflow when menu is not visible */
+  font-family: 'futura', sans-serif;
+
+scrollbar-width: none;         /* Firefox */
+-ms-overflow-style: none;      /* Internet Explorer 10+ */
+overflow-y: scroll;            /* Still allow scrolling */
+}
+
+body::-webkit-scrollbar {
+display: none;                 /* Chrome, Safari, Opera */
+}
+/* Scrollbar container */
+.c-scrollbar {
+position: fixed;
+top: 0;
+right: 0;
+width: 7px;
+height: 100vh;
+z-index: 59;
+pointer-events: none; /* Allows clicks to pass through if needed */
+}
+
+/* Scroll thumb */
+.c-scrollbar_thumb {
+position: absolute;
+top: 0;
+right: 0;
+width: 7px;
+border-radius: 10px;
+margin: 2px;
+background-color: #000;
+opacity: 0.5;
+cursor: grab;
+z-index: 59;
+pointer-events: auto; /* React to mouse events */
+}
+
+
+
+
+  footer{
+      background-color: black;
+      color: white;
+  }
+
+
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .cell {
+    width: 100%;
+    height: 100%;
+  }
+
+
+#proddesign{
+margin-top: 50px;
+margin-left: 20px;
+padding-top: 10px;
+padding-bottom: 10px;
+width: 200px;
+background-color: white;
+color: black;
+font-family: 'futura', sans-serif;
+font-size: 1.7rem;
+font-style: bold;
+border-radius: 5px;
+box-shadow: 10px  10px 25px rgba(16, 15, 15, 0.1);
+border: none;
+
+}
+
+
+
+.explore{
+padding-top:-20px;
+height:50vh;
+width: 100vw;
+background-color: white;
+color: red;
+display: flex;
+flex-direction: column;
+
+justify-content: center;
+align-items: center;
+}
+
+
+.explore h2{
+font-size: 3.1rem;
+margin-top: 20px;
+white-space: nowrap;
+
+}
+
+#btnAbout{
+height: 40px;
+width: 80px;
+background-color: black;
+color: white;
+font-family: "futura", sans-serif;
+font-weight: bold;
+border: none;
+border-radius: 5px;
+font-size: 1rem;
+
+
+
+}
+
+}
+@media only screen and (min-width: 576px){
+
+
+  .web-design h2{
+    
+    
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    align-self: center;
+    font-size: 3rem;
+    z-index: 1000;
+    inset: 50px 100px 50px 100px;
+    white-space: nowrap;
+    
+  
+  
+  }
+  
+  .software{
+    height: 100vh;
+    background-color: black;
+    color: #76CD26;
+    font-family: 'Courier New', Courier, monospace;
+    padding-left: 10px;
+    padding-top: 30px;
+  }
+  
+  .terminal-input {
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    font: inherit;
+    padding: 4px 8px;
+  }
+  
+  
+  
+  
+  .product-design{
+    background-color: white;
+    min-height: 100vh; 
+    
+    
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    
+    
+  }
+  /* begin navbar*/  
+  
+  
+  .navbar{
+    display: flex;
+    justify-content: space-between; /* space between logo and hamburger */
+    align-items: center;  
+    
+    height: 100px;
+    backdrop-filter: blur(5px);  /* Apply blur effect */
+    background-color: white;
+    
+  
+  }
+  
+  nav li{
+  
+    
+  text-decoration: none;
+  
+  list-style: none;
+  padding: 10px;
+  }
+  
+  .navbar.sticky{
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    mix-blend-mode: difference;
+    background-color:rgba(0, 0, 0, 1)
+  
+    
+  }
+  
+  
+  
+  .sticky-active {
+    padding-top: 100px;
+    background-color: white; /* Adjust this based on the height of your navbar */
+  }
+  
+  
+  .logo{
+    display: flex;
+    
+    align-items: center;
+    padding-left: 10px;
+    mix-blend-mode: difference;
+    color: white; /* Starting color for text before blend */
+    
+    
+  }
+  
+  .logo img{
+    
+    
+    margin-right: 10px; /* Space between logo and text */
+    mix-blend-mode: difference;
+  }
+  /* end navbar*/  
+  
+  /* menu begin */
+  
+  
+  
+  
+  .hamburger {
+    
+  mix-blend-mode: difference;
+  color: white; /* Starting color for text before blend */
+  
+  padding-right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  
+  font-weight: bold;
+  text-decoration: underline;
+  
+  
+  
+  }
+  
+  
+  
+  .hamburger.active {
+  color: white;
+  }
+  
+  .side-menu {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hide off-screen by default */
+  width: 400px;
+  height: 100vh;
+  background-color: rgb(42, 42, 42); /* Semi-transparent background */
+  mix-blend-mode: normal;
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 990;
+  overflow-y: auto;     
+  font-size: 2rem;
+  
+  }
+  
+  
+  
+  .side-menu li {
+  list-style: none;
+  padding: 5px;
+  }
+  
+  .side-menu ul li {
+  margin: 20px 0;
+  }
+  
+  .side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  }
+  
+  /* Side menu active (slide in) */
+  .side-menu.active {
+  right: 0;
+  }
+  
+  .menu-content {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+  color: white;
+  }
+  
+  /* When menu is open, fade in content */
+  .side-menu.active .menu-content {
+  opacity: 1;
+  transform: translateY(0);
+  }
+  
+  /* Optional: Close the side menu when clicked outside */
+  body.open .side-menu {
+  right: 0;
+  }
+  
+  body.menu-open .navbar.sticky {
+  background-color: rgba(0, 0, 0, 0.85); /* Add a solid background to cancel blend issues */
+  mix-blend-mode: normal;
+  }
+  
+  a {
+  text-decoration: none;  /* Removes underline */
+  color: inherit;         /* Inherit color from parent, or you can set any color like #000 or #333 */
+  }
+  
+  
+  /* end menu */
+  
+  /* Circle around the cursor */
+  .cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate3d(0, 0, 0);
+  mix-blend-mode: difference; /* Negative color effect */
+  }
+  
+  /* end cursor */
+  
+  /* begin load animation*/
+  
+  .loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Background color of the loader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it stays above other content */
+  transition: opacity 0.75s, visibility 0.75s; /* Smooth fade-out effect */
+  }
+  .loader.hidden {
+  opacity: 0;
+  visibility: hidden; /* Hide the loader */
+  }
+  
+  /* end load animation*/
+  
+  /* INCLUDE EVERYTHING ABOVE ON EVERY PAGE */
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  body {
+    overflow-x: hidden; /* Prevent horizontal overflow when menu is not visible */
+    font-family: 'futura', sans-serif;
+  
+  scrollbar-width: none;         /* Firefox */
+  -ms-overflow-style: none;      /* Internet Explorer 10+ */
+  overflow-y: scroll;            /* Still allow scrolling */
+  }
+  
+  body::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari, Opera */
+  }
+  /* Scrollbar container */
+  .c-scrollbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 7px;
+  height: 100vh;
+  z-index: 59;
+  pointer-events: none; /* Allows clicks to pass through if needed */
+  }
+  
+  /* Scroll thumb */
+  .c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  background-color: #000;
+  opacity: 0.5;
+  cursor: grab;
+  z-index: 59;
+  pointer-events: auto; /* React to mouse events */
+  }
+  
+  
+  
+  
+    footer{
+        background-color: black;
+        color: white;
+    }
+  
+  
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+      width: 100vw;
+      height: 100vh;
+    }
+    
+    .cell {
+      width: 100%;
+      height: 100%;
+    }
+  
+  
+  #proddesign{
+  margin-top: 50px;
+  margin-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+  background-color: white;
+  color: black;
+  font-family: 'futura', sans-serif;
+  font-size: 1.7rem;
+  font-style: bold;
+  border-radius: 5px;
+  box-shadow: 10px  10px 25px rgba(16, 15, 15, 0.1);
+  border: none;
+  
+  }
+  
+  
+  
+  .explore{
+  padding-top:-20px;
+  height:50vh;
+  width: 100vw;
+  background-color: white;
+  color: red;
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  align-items: center;
+  }
+  
+  
+  .explore h2{
+  font-size: 3.1rem;
+  margin-top: 20px;
+  white-space: nowrap;
+  
+  }
+  
+  #btnAbout{
+  height: 40px;
+  width: 80px;
+  background-color: black;
+  color: white;
+  font-family: "futura", sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  
+  
+  
+  }
+  
+
+}
+@media only screen and (min-width: 768px){}
+@media only screen and (min-width: 992px){}
+@media only screen and (min-width: 1200px){}
+@media only screen and (min-width: 1400px){}
+
