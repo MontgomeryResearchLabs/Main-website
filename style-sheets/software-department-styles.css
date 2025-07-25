@@ -1,0 +1,683 @@
+/* Universal styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Good practice for responsive design */
+}
+
+/* --- begin navbar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    backdrop-filter: blur(5px);
+    background-color: white;
+}
+
+nav li {
+    text-decoration: none;
+    list-style: none;
+    padding: 10px;
+}
+
+.navbar.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    mix-blend-mode: difference;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.sticky-active {
+    padding-top: 100px;
+    background-color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    mix-blend-mode: difference;
+    color: white;
+}
+
+.logo img {
+    margin-right: 10px;
+    mix-blend-mode: difference;
+}
+/* --- end navbar --- */
+
+/* --- begin menu --- */
+.hamburger {
+    mix-blend-mode: difference;
+    color: white;
+    padding-right: 20px;
+    cursor: pointer;
+    z-index: 10000000000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.hamburger.active {
+    color: white;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 400px;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    background-color: rgb(42, 42, 42);
+    color: white;
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+    overflow-y: auto;
+    font-size: 2rem;
+}
+
+.side-menu li {
+    list-style: none;
+    padding: 5px;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    margin: 20px 0;
+}
+
+.side-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+.menu-content {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+    color: white;
+}
+
+.side-menu.active .menu-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.open .side-menu {
+    right: 0;
+}
+
+body.menu-open .navbar.sticky {
+    background-color: rgba(0, 0, 0, 0.85);
+    mix-blend-mode: normal;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* --- end menu --- */
+
+/* --- Circle around the cursor --- */
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100000000000000;
+    transform: translate3d(0, 0, 0);
+    mix-blend-mode: difference;
+}
+/* --- end cursor --- */
+
+/* --- begin load animation --- */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+/* --- end load animation --- */
+
+/* INCLUDE EVERYTHING ABOVE ON EVERY PAGE */
+
+/* --- Main content styles --- */
+body {
+    overflow-x: hidden;
+    font-family: 'futura', sans-serif;
+}
+
+/* --- Gridbox Styles --- */
+.gridbox {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 20px; /* Added gap for better spacing */
+    padding: 20px; /* Add padding to the grid container */
+}
+
+.grid-title {
+    grid-column: span 4; /* Span all 4 columns by default */
+    font-size: 3.5rem;
+    justify-self: center;
+    color: blue;
+    text-align: center; /* Center the title text */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.grid-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px;
+    height: 150px;
+    max-width: 120px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+}
+
+.grid-item.expanded {
+    grid-column: span 1; /* Retain default span on larger screens */
+    grid-row: span 2;
+    height: auto;
+    min-width: 500px;
+    color: black;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for expanded state */
+    z-index: 10; /* Bring expanded item to front */
+}
+
+.grid-item img {
+    width: 100%;
+    transition: opacity 0.3s ease;
+    display: block;
+}
+
+.hover-img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+}
+
+.grid-item:hover .default-img {
+    opacity: 0;
+}
+
+.grid-item:hover .hover-img {
+    opacity: 1;
+}
+
+.description {
+    display: none;
+    margin-top: 10px;
+    font-size: 0.9rem; /* Adjust font size for description */
+    line-height: 1.4;
+}
+
+.contact {
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+    color: black;
+    margin-top: 15px;
+    height: 30px;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 5px;
+    font-family: 'futura', sans-serif;
+    font-size: large;
+    cursor: pointer; /* Add cursor pointer */
+}
+
+.contact:hover {
+    background-color: black;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.grid-item.expanded .description {
+    display: block;
+}
+
+/* --- WIRE Section --- */
+.WIRE {
+    background-color: white;
+    height: 100vh;
+    color: red;
+}
+
+.wire-title {
+    position: relative;
+    align-self: center;
+    margin-top: 0px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    font-size: 1.5rem;
+    width: 30%;
+    color: red;
+}
+
+/* --- Carousel Styles --- */
+.my-card {
+    width: 550px;
+    height: 350px;
+    background: red;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+}
+
+.carousel {
+    margin: 25px 75px;
+    max-width: 85%;
+    justify-self: center;
+}
+
+.carousel-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.carousel-content {
+    display: flex;
+    margin: 0 35px;
+    max-width: 1400px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.carousel-content > * {
+    flex: 0 0 auto;
+    margin-right: 50px;
+}
+
+.carousel-content > :last-child {
+    margin-right: 0;
+}
+
+.carousel-arrow {
+    flex: 0 0 auto;
+    width: 35px;
+    height: 35px;
+    border: 5px solid black;
+    transform: rotate(45deg);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.carousel-arrow:hover {
+    transform: rotate(45deg) scale(1.05);
+}
+
+.carousel-arrow-left {
+    border-top: none;
+    border-right: none;
+}
+
+.carousel-arrow-right {
+    border-bottom: none;
+    border-left: none;
+}
+
+.carousel-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    margin: 0 15px;
+    border: 3px solid black;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.carousel-dot:hover {
+    background-color: lightgray;
+}
+
+.carousel-dot-active,
+.carousel-dot-active:hover {
+    background-color: black;
+    cursor: auto;
+}
+
+/* --- News Letter Section --- */
+.news-letter {
+    background-color: red;
+    height: 130px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    color: white;
+    align-self: center;
+    justify-self: center;
+    width: 35%;
+}
+
+.news-letter-content {
+    padding-left: 20px;
+    line-height: 2rem;
+}
+
+.news-letter-acknowledgement {
+    padding-left: 20px;
+    line-height: 2rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: black;
+    color: white;
+}
+
+/* --- Scrollbar --- */
+.c-scrollbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 7px;
+    height: 100vh;
+    z-index: 59;
+    pointer-events: none;
+}
+
+.c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+    background-color: #000;
+    opacity: 0.5;
+    cursor: grab;
+    z-index: 59;
+    pointer-events: auto;
+}
+
+/* --- Explore Section --- */
+.explore {
+    padding-top: 0px; /* Adjusted padding-top as negative padding can cause issues */
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.explore h2 {
+    font-size: 10rem;
+    margin-top: 20px;
+    white-space: nowrap;
+}
+
+#btnAbout {
+    height: 80px;
+    width: 160px;
+    background-color: blue;
+    color: white;
+    font-family: "futura", sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+}
+
+
+
+@media (max-width: 1024px) {
+    .gridbox {
+        grid-template-columns: repeat(3, 1fr); /* Change to 3 columns */
+    }
+
+    .grid-title {
+        grid-column: span 3; /* Span all 3 columns */
+        font-size: 3rem; /* Slightly reduce font size */
+    }
+
+    .grid-item {
+        max-width: 150px; /* Allow items to be a bit wider */
+        height: 180px; /* Adjust height */
+    }
+
+    .grid-item.expanded {
+        grid-column: span 3; /* Expanded item spans full width for better visibility */
+        min-width: auto; /* Remove min-width constraint */
+        width: 90%; /* Take up more available width */
+    }
+}
+
+@media (max-width: 768px) {
+    .gridbox {
+        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .grid-title {
+        grid-column: span 2; /* Span all 2 columns */
+        font-size: 2.5rem; /* Further reduce font size */
+        margin-bottom: 15px;
+    }
+
+    .grid-item {
+        max-width: 100%; /* Allow grid items to take full width of their column */
+        height: auto; /* Allow height to adjust based on content */
+        padding: 8px; /* Reduce padding */
+    }
+
+    .grid-item.expanded {
+        grid-column: span 2; /* Expanded item spans full width */
+        width: 100%; /* Ensure it takes full available width */
+        min-width: unset; /* Remove min-width constraint */
+    }
+
+    .description {
+        font-size: 0.85rem; /* Smaller description text */
+    }
+
+    .contact {
+        height: 25px; /* Smaller contact button */
+        font-size: medium;
+        margin-top: 10px;
+    }
+
+    /* Adjustments for other sections on smaller screens */
+    .navbar {
+        height: 80px;
+    }
+    .side-menu {
+        width: 300px;
+        right: -320px;
+        font-size: 1.5rem;
+    }
+    .carousel {
+        margin: 20px 20px;
+        max-width: unset; /* Remove max-width for full flexibility */
+    }
+    .carousel-content {
+        margin: 0 15px;
+        max-width: unset;
+    }
+    .carousel-arrow {
+        width: 25px;
+        height: 25px;
+        border-width: 3px;
+    }
+    .my-card {
+        width: 300px; /* Adjust card width for tablets */
+        height: 200px; /* Adjust card height */
+        line-height: normal; /* Allow text to wrap naturally */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px; /* Add padding to card content */
+        font-size: 1rem;
+    }
+    .news-letter {
+        width: 80%; /* Make newsletter wider */
+        height: auto;
+        padding: 15px;
+    }
+    .news-letter-content, .news-letter-acknowledgement {
+        line-height: 1.5rem;
+        padding-left: 10px;
+    }
+    .explore h2 {
+        font-size: 4rem; /* Adjust explore title */
+        white-space: normal; /* Allow text to wrap */
+        text-align: center;
+        padding: 0 10px;
+    }
+    #btnAbout {
+        height: 60px;
+        width: 120px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gridbox {
+        grid-template-columns: 1fr; /* Single column layout for mobile */
+        padding: 10px;
+    }
+
+    .grid-title {
+        grid-column: span 1; /* Span the single column */
+        font-size: 2rem; /* Smaller title */
+        margin-bottom: 10px;
+    }
+
+    .grid-item {
+        max-width: 90%; /* Adjust max-width for better centering */
+        margin: 0 auto 15px auto; /* Center items and add bottom margin */
+        padding: 5px;
+        height: auto; /* Ensure height adjusts */
+    }
+
+    .grid-item.expanded {
+        grid-column: span 1; /* Still single column */
+        width: 100%; /* Take full width of the container */
+    }
+
+    .description {
+        font-size: 0.8rem; /* Even smaller description */
+    }
+
+    .contact {
+        height: 20px; /* Further reduce button size */
+        font-size: small;
+        margin-top: 8px;
+    }
+
+    /* General mobile adjustments */
+    .navbar {
+        height: 60px;
+    }
+    .logo {
+        padding-left: 5px;
+    }
+    .hamburger {
+        padding-right: 10px;
+    }
+    .side-menu {
+        width: 75%;
+        right: -480px;
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+    .side-menu ul li {
+        margin: 15px 0;
+    }
+    .cursor {
+        display: none; /* Hide custom cursor on mobile */
+    }
+    .wire-title {
+        width: 90%; /* Wider on mobile */
+        margin-left: 10px;
+        font-size: 1.2rem;
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+    .my-card {
+        width: 250px; /* Smaller card width for phones */
+        height: 150px; /* Smaller card height */
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    .carousel {
+        margin: 15px 10px;
+    }
+    .carousel-content {
+        margin: 0 10px;
+    }
+    .carousel-arrow {
+        width: 20px;
+        height: 20px;
+        border-width: 2px;
+    }
+    .carousel-dot {
+        width: 12px;
+        height: 12px;
+        margin: 0 10px;
+        border-width: 2px;
+    }
+    .news-letter {
+        width: 90%; /* Almost full width for newsletter */
+        padding: 10px;
+        height: auto;
+    }
+    .news-letter-content, .news-letter-acknowledgement {
+        line-height: 1.3rem;
+        font-size: 0.9rem;
+    }
+    .explore h2 {
+        font-size: 2.5rem; /* Final adjustment for smallest screens */
+    }
+    #btnAbout {
+        height: 45px;
+        width: 100px;
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,556 @@
+/*
+*
+* Global Base Styles (Mobile-First)
+* All styles here apply to all screens by default.
+*
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Modern standard for predictable layouts */
+}
+
+body {
+    overflow-x: hidden; /* Prevents horizontal overflow */
+    font-family: 'futura', sans-serif;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/*
+*
+* Navbar
+*
+*/
+
+/* begin navbar*/  
+
+
+  .navbar{
+    display: flex;
+    justify-content: space-between; /* space between logo and hamburger */
+    align-items: center;  
+    
+    height: 100px;
+    backdrop-filter: blur(5px);  /* Apply blur effect */
+    background-color: white;
+    z-index: 1000; /* Ensure it stays above other content */
+    
+
+}
+
+nav li{
+
+    
+  text-decoration: none;
+  
+  list-style: none;
+  padding: 10px;
+}
+
+.navbar.sticky{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    mix-blend-mode: difference;
+    background-color:rgba(0, 0, 0, 1)
+
+    
+}
+
+
+
+
+.sticky-active {
+    padding-top: 100px;
+    background-color: white; /* Adjust this based on the height of your navbar */
+  }
+
+
+  .logo{
+    display: flex;
+    
+    align-items: center;
+    padding-left: 10px;
+    mix-blend-mode: difference;
+    color: white; /* Starting color for text before blend */
+    z-index: 100001;
+    
+    
+  }
+
+  .logo img{
+    
+    
+    margin-right: 10px; /* Space between logo and text */
+    mix-blend-mode: difference;
+  }
+/* end navbar*/  
+
+/* menu begin */
+
+
+
+
+.hamburger {
+    
+  mix-blend-mode: difference;
+  color: white; /* Starting color for text before blend */
+  
+  padding-right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+
+  font-weight: bold;
+  text-decoration: underline;
+  
+  
+
+}
+
+
+
+.hamburger.active {
+  color: white;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hide off-screen by default */
+  width: 400px;
+  height: 100vh;
+  backdrop-filter: blur(5px);  /* Apply blur effect */
+  background-color: rgb(42, 42, 42); /* Semi-transparent background */
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 999;
+  overflow-y: auto;     
+  font-size: 2rem;
+}
+
+
+
+
+
+.side-menu li {
+  
+  list-style: none;
+  padding: 5px;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Side menu active (slide in) */
+.side-menu.active {
+  right: 0;
+}
+
+.menu-content {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+  color: white;
+}
+
+.side-menu.active .menu-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.open .side-menu {
+    right: 0;
+}
+
+body.menu-open .navbar.sticky {
+    background-color: rgba(0, 0, 0, 0.85);
+    mix-blend-mode: normal;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*
+*
+* Other Components
+*
+*/
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate3d(0, 0, 0);
+    mix-blend-mode: difference;
+    pointer-events: none;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.c-scrollbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 7px;
+    height: 100vh;
+    z-index: 59;
+    pointer-events: none;
+}
+
+.c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+    background-color: #000;
+    opacity: 0.5;
+    cursor: grab;
+    z-index: 59;
+    pointer-events: auto;
+}
+
+/*
+*
+* Section-specific styles
+*
+*/
+.web-design h2 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: clamp(3rem, 10vw, 5rem); /* Fluid font size */
+    z-index: 990;
+    text-align: center;
+    white-space: normal; /* Ensure text wraps */
+    padding-top: 0
+}
+
+.software {
+    height: 100vh;
+    background-color: black;
+    color: #76CD26;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 30px 10px 10px; /* Added padding bottom for consistency */
+}
+
+.terminal-input {
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    font: inherit;
+    padding: 4px 8px;
+}
+
+.product-design {
+    background-color: white;
+    min-height: 100vh;
+    padding: 20px; /* Added padding for spacing */
+}
+
+#proddesign {
+    margin-top: 50px;
+    margin-left: 20px;
+    padding: 10px 20px; /* Increased padding for better tap target */
+    width: clamp(150px, 40vw, 200px); /* Fluid width for button */
+    min-height: 48px; /* Accessible tap target */
+    background-color: white;
+    color: black;
+    font-family: 'futura', sans-serif;
+    font-size: 1.7rem;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 10px 10px 25px rgba(16, 15, 15, 0.1);
+    border: none;
+    cursor: pointer;
+}
+
+.explore {
+    padding-top: 20px;
+    height: 50vh;
+    width: 100vw;
+    background-color: white;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.explore h2 {
+    font-size: clamp(3.1rem, 10vw, 5rem); /* Fluid font size */
+    margin-top: 20px;
+    white-space: normal; /* Ensure text wraps */
+}
+
+#btnAbout {
+    min-width: 80px;
+    min-height: 48px; /* Accessible tap target */
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-family: "futura", sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10%, 1fr)); /* Auto-fit columns */
+    grid-template-rows: repeat(auto-fit, minmax(10%, 1fr));
+    width: 100vw;
+    height: 100vh;
+      pointer-events: none;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+}
+
+/*
+*
+* Footer (Restored from the original design)
+*
+*/
+
+footer {
+    height: fit-content;
+    background-color: black;
+    color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.bottom-title {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.bottom-title h1 {
+    color: red;
+    text-align: center;
+    font-size: 5.5rem;
+    animation: move-rtl 30000ms linear infinite;
+    white-space: nowrap;
+    padding: 0 1rem;
+}
+
+@keyframes move-rtl {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.socials-container {
+    display: flex;
+    flex-direction: row;
+    box-sizing: content-box;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.socials-container a {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 1em;
+    display: grid;
+    place-items: center;
+    position: relative;
+    border-radius: 100%;
+    min-width: 48px;
+    min-height: 48px;
+}
+
+.socials-container a svg {
+    height: 32px;
+    fill: white;
+}
+
+.socials-container a::before {
+    content: attr(data-social);
+    position: absolute;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: .5em 1em;
+    border-radius: 100px;
+    transform: translateY(-30px) rotate(25deg);
+    opacity: 0;
+    transition: 200ms ease-in-out;
+}
+
+.socials-container a:hover::before {
+    opacity: 1;
+    transform: translateY(-65px) rotate(0);
+}
+
+.socials-container a:hover::after {
+    opacity: 1;
+    transform: translateY(-42px) rotate(0);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info {
+    height: fit-content;
+    width: 100%;
+    color: white;
+    line-height: 1.5rem;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contact-info a {
+    color: grey;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.contact-info a:hover {
+    color: white;
+    text-decoration: underline;
+    transition: 200ms;
+}
+/*
+*
+* Media Queries
+* Styles here OVERRIDE the base styles for larger screens
+*
+*/
+
+/* min-width: 577px and max-width: 767px (Small devices) */
+@media (min-width: 577px) and (max-width: 767px) {
+    .web-design h2 {
+        font-size: clamp(3.5rem, 8vw, 5rem);
+    }
+
+    .side-menu {
+        width: 350px;
+    }
+
+    .bottom-title h1 {
+        font-size: 3rem;
+    }
+.bottom-title h1 { font-size: 3rem; }
+    .footer-container { flex-direction: column; align-items: center; }
+    .contact-info { text-align: center; width: 100%; }
+    .socials-container { justify-content: center; margin-top: 20px; }
+
+
+}
+
+/* min-width: 768px and max-width: 991px (Medium devices) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .web-design h2 {
+        font-size: clamp(4rem, 6vw, 6rem);
+    }
+    
+    .bottom-title h1 {
+        font-size: 4rem;
+    }
+
+    .bottom-title h1 { font-size: 4rem; }
+    .footer-container { flex-direction: row; justify-content: space-around; padding: 20px; }
+    .contact-info { width: 45%; text-align: left; }
+    .socials-container { justify-content: flex-start; margin-top: 0; }
+
+
+}
+
+/* min-width: 992px and max-width: 1199px (Large devices) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .web-design h2 {
+        font-size: clamp(4.5rem, 5vw, 6rem);
+    }
+    
+        .bottom-title h1 { font-size: 5rem; }
+    .footer-container { flex-direction: row; justify-content: space-around; padding: 20px; }
+    .contact-info { width: 300px; }
+
+}
+
+/* min-width: 1200px (Extra large devices) */
+@media (min-width: 1200px) {
+    .web-design h2 {
+        font-size: 5rem;
+    }
+    
+      .bottom-title h1 { font-size: 5.5rem; }
+    .footer-container { flex-direction: row; justify-content: space-around; padding: 20px; }
+    .contact-info { width: 400px; }
+
+}

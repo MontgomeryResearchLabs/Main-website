@@ -1,0 +1,467 @@
+
+  .pin-spacer{
+    overflow: hidden;
+  }
+
+  .scroll {
+    height: auto;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .scroll-wrapper {
+    display: flex;
+    width: calc(100vw * 6); /* 6 panels */
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    animation: scrollPanels 6s linear forwards;
+    height: 100vh;
+    overflow: hidden;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    flex-direction: row; /* Ensure panels are side-by-side */
+  
+  }
+ 
+  .panel {
+    flex-shrink: 0;
+    width: 100vw;
+    height: 100vh;
+    flex: 0 0 100vw; /* Each panel takes full viewport width */
+    box-sizing: border-box;
+  }
+  
+
+ 
+
+.identify{
+    background-color: blue;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    font-size: 3rem;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 70px;
+}
+
+.title{
+    position: absolute;
+    bottom: 0;
+    font-size: 8rem;
+    color: white;
+    margin-bottom: 0;
+    margin-left:-41px;
+    margin-bottom: -45px;
+
+}
+
+
+
+.identity{
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+
+.define{
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    color: red;
+    font-size: 3rem;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    padding-bottom: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 70px;
+    
+
+}
+
+
+
+.ideate{
+    background-color: rgb(255, 111, 0);
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    font-size: 3rem;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    padding-bottom: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 70px;
+
+}
+
+
+.design{
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    color: black;
+    font-size: 3rem;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    padding-bottom: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 70px;
+
+}
+
+.test{
+    background-color: rgb(255, 213, 0);
+    height: 100vh;
+    width: 100vw;
+    color: rgb(83, 82, 81);
+    font-size: 3rem;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    padding-bottom: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 70px;
+
+}
+
+.test p{
+    color: black;
+}
+
+
+
+.implement{
+    background-color: rgb(7, 54, 10);
+    height: 100vh;
+    width: 100vw;
+    color: rgb(31, 150, 39);
+    font-size: 3rem;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    padding-bottom: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 70px;
+
+}
+
+.implement p{
+    color: white;
+}
+* {
+    margin: 0;
+    padding: 0;
+    
+    
+    
+  }
+/* begin navbar*/  
+
+
+  .navbar{
+    display: flex;
+    justify-content: space-between; /* space between logo and hamburger */
+    align-items: center;  
+    
+    height: 100px;
+    backdrop-filter: blur(5px);  /* Apply blur effect */
+    background-color: blue;
+    
+
+}
+
+nav li{
+
+    
+  text-decoration: none;
+  
+  list-style: none;
+  padding: 10px;
+}
+
+.navbar.sticky{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    mix-blend-mode: difference;
+    background-color:rgba(0, 0, 0, 1)
+    
+}
+
+
+
+.sticky-active {
+    padding-top: 100px;
+    background-color: blue; /* Adjust this based on the height of your navbar */
+  }
+
+
+  .logo{
+    display: flex;
+    
+    align-items: center;
+    padding-left: 10px;
+    mix-blend-mode: difference;
+    color: white; /* Starting color for text before blend */
+    
+    
+  }
+
+  .logo img{
+    
+    
+    margin-right: 10px; /* Space between logo and text */
+    mix-blend-mode: difference;
+  }
+/* end navbar*/  
+
+/* menu begin */
+
+
+
+
+.hamburger {
+    
+  mix-blend-mode: difference;
+  color: white; /* Starting color for text before blend */
+  
+  padding-right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+
+  font-weight: bold;
+  text-decoration: underline;
+  
+  
+
+}
+
+
+
+.hamburger.active {
+  color: white;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hide off-screen by default */
+  width: 400px;
+  height: 100vh;
+  background-color: rgb(42, 42, 42); /* Semi-transparent background */
+  mix-blend-mode: normal;
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 990;
+  overflow-y: auto;     
+  font-size: 2rem;
+  
+}
+
+
+
+.side-menu li {
+  list-style: none;
+  padding: 5px;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Side menu active (slide in) */
+.side-menu.active {
+  right: 0;
+}
+
+.menu-content {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+  color: white;
+}
+
+/* When menu is open, fade in content */
+.side-menu.active .menu-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Close the side menu when clicked outside */
+body.open .side-menu {
+  right: 0;
+}
+
+body.menu-open .navbar.sticky {
+  background-color: rgba(0, 0, 0, 0.85); /* Add a solid background to cancel blend issues */
+  mix-blend-mode: normal;
+}
+
+a {
+  text-decoration: none;  /* Removes underline */
+  color: inherit;         /* Inherit color from parent, or you can set any color like #000 or #333 */
+}
+
+
+/* end menu */
+
+/* Circle around the cursor */
+.cursor {
+  position: fixed;
+top: 0;
+left: 0;
+width: 40px;
+height: 40px;
+background: white;
+border-radius: 50%;
+pointer-events: none;
+z-index: 10000;
+transform: translate3d(0, 0, 0);
+mix-blend-mode: difference; /* Negative color effect */
+}
+
+/* end cursor */
+
+/* begin load animation*/
+
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Background color of the loader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it stays above other content */
+  transition: opacity 0.75s, visibility 0.75s; /* Smooth fade-out effect */
+}
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden; /* Hide the loader */
+}
+
+/* end load animation*/
+
+/* INCLUDE EVERYTHING ABOVE ON EVERY PAGE */
+
+
+
+  
+  
+  html{
+    scroll-snap-type: y mandatory;
+  }
+
+  
+  html, body {
+    scroll-behavior: smooth;
+    
+  }
+
+  body {
+    
+    font-family: 'futura', sans-serif;
+
+  /* Hide scrollbar for all elements including body */
+    scrollbar-width: none;         /* Firefox */
+    -ms-overflow-style: none;      /* Internet Explorer 10+ */
+    overflow-y: scroll;            /* Still allow scrolling */
+  }
+  
+  body::-webkit-scrollbar {
+    display: none;                 /* Chrome, Safari, Opera */
+  }
+
+  .explore{
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    color: black;
+    font-size: 3rem;
+    
+    box-sizing: border-box;
+  }
+
+  .hero{
+    height: 100vh;
+    background-color: bisque;
+    scroll-snap-align: start;
+    scroll-snap-type: y mandatory;
+  }
+
+
+  .scroll-wrapper p {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto; /* Enables optical sizing */
+    font-weight: 200;          /* Lightest weight */
+    font-style: normal;
+    font-size: 2rem;
+    
+    
+}
+
+/* Scrollbar container */
+.c-scrollbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 7px;
+    height: 100vh;
+    z-index: 59;
+    pointer-events: none; /* Allows clicks to pass through if needed */
+  }
+  
+  /* Scroll thumb */
+  .c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+    background-color: #000;
+    opacity: 0.5;
+    cursor: grab;
+    z-index: 59;
+    pointer-events: auto; /* React to mouse events */
+  }
+  
+  
+  
+
+    footer{
+        background-color: black;
+        color: white;
+    }
+
+
+@media only screen and (max-width: 576px){}
+@media only screen and (min-width: 576px){}
+@media only screen and (min-width: 768px){}
+@media only screen and (min-width: 992px){}
+@media only screen and (min-width: 1200px){}
+@media only screen and (min-width: 1400px){}
+

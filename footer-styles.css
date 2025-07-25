@@ -1,0 +1,149 @@
+/* Responsive footer styles */
+/* ...existing code... */
+footer {
+    height: fit-content;
+    background-color: black;
+    color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.bottom-title {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.bottom-title h1 {
+    color: red;
+    text-align: center;
+    font-size: 5.5rem;
+    animation: move-rtl 30000ms linear infinite;
+    white-space: nowrap;
+    padding: 0 1rem;
+}
+
+@keyframes move-rtl {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.socials-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.socials-container a {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 1em;
+    display: grid;
+    place-items: center;
+    position: relative;
+    border-radius: 100%;
+    min-width: 48px;
+    min-height: 48px;
+}
+
+.socials-container a svg {
+    height: 32px;
+    fill: white;
+}
+
+.socials-container a::before {
+    content: attr(data-social);
+    position: absolute;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: .5em 1em;
+    border-radius: 100px;
+    transform: translateY(-30px) rotate(25deg);
+    opacity: 0;
+    transition: 200ms ease-in-out;
+}
+
+.socials-container a:hover::before {
+    opacity: 1;
+    transform: translateY(-65px) rotate(0);
+}
+
+.socials-container a:hover::after {
+    opacity: 1;
+    transform: translateY(-42px) rotate(0);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info {
+    height: fit-content;
+    width: 100%;
+    color: white;
+    line-height: 1.5rem;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contact-info a {
+    color: grey;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.contact-info a:hover {
+    color: white;
+    text-decoration: underline;
+    transition: 200ms;
+}
+/* ...existing code... */
+
+/* Add the media queries for responsiveness as well */
+@media (max-width: 576px) {
+    .navbar { height: 80px; }
+    .logo img { height: 40px; }
+    .bottom-title h1 { font-size: 2rem; }
+    .footer-container { flex-direction: column; align-items: center; }
+    .contact-info { text-align: center; margin: 20px 0; width: 100%; }
+    .socials-container { justify-content: center; margin-top: 20px; }
+}
+
+@media (min-width: 577px) and (max-width: 767px) {
+    .side-menu { width: 350px; }
+    .bottom-title h1 { font-size: 3rem; }
+    .footer-container { flex-direction: column; align-items: center; }
+    .contact-info { text-align: center; width: 100%; }
+    .socials-container { justify-content: center; margin-top: 20px; }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .bottom-title h1 { font-size: 4rem; }
+    .footer-container { flex-direction: row; justify-content: space-around; padding: 20px; }
+    .contact-info { width: 45%; text-align: left; }
+    .socials-container { justify-content: flex-start; margin-top: 0; }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .bottom-title h1 { font-size: 5rem; }
+    .footer-container { flex-direction: row; justify-content: space-around; padding: 20px; }
+    .contact-info { width: 300px; }
+}
+
+@media (min-width: 1200px) {
+    .bottom-title h1 { font-size: 5.5rem; }
+    .footer-container { flex-direction: row; justify-content: space-around; padding: 20px; }
+    .contact-info { width: 400px; }
+}

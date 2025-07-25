@@ -1,0 +1,623 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Added for better box model handling */
+}
+
+/* begin navbar*/
+p {padding-top: 5px;
+    padding-bottom: 5px;
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    backdrop-filter: blur(5px);
+    background-color: white;
+    padding: 0 20px; /* Added padding to prevent content from touching edges */
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    mix-blend-mode: difference;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.sticky-active {
+    padding-top: 100px;
+    background-color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    mix-blend-mode: difference;
+    color: white;
+}
+
+.logo img {
+    margin-right: 10px;
+    mix-blend-mode: difference;
+}
+
+/* end navbar*/
+
+/* menu begin */
+
+.hamburger {
+    mix-blend-mode: difference;
+    color: white;
+    padding-right: 20px;
+    cursor: pointer;
+    z-index: 1001; /* Higher z-index to be above the side menu */
+    font-weight: bold;
+    text-decoration: underline;
+    /* Removed padding-right and added padding to the hamburger itself for better tap target */
+    padding: 10px;
+    min-width: 48px;
+    min-height: 48px;
+}
+
+.hamburger.active {
+    color: white;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -100vw; /* Use 100vw to hide completely */
+    width: clamp(250px, 75vw, 450px); /* Responsive width */
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    background-color: rgb(42, 42, 42);
+    color: white;
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 10000;
+    overflow-y: auto;
+    font-size: 2rem;
+}
+
+.side-menu li {
+    list-style: none;
+    padding: 5px;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    margin: 20px 0;
+}
+
+.side-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block; /* Make the whole area clickable */
+    padding: 10px;
+}
+
+/* Side menu active (slide in) */
+.side-menu.active {
+    right: 0;
+}
+
+.menu-content {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+    color: white;
+}
+
+/* When menu is open, fade in content */
+.side-menu.active .menu-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional: Close the side menu when clicked outside */
+body.open .side-menu {
+    right: 0;
+}
+
+body.menu-open .navbar.sticky {
+    background-color: rgba(0, 0, 0, 0.85);
+    mix-blend-mode: normal;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* end menu */
+
+/* Circle around the cursor */
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate3d(0, 0, 0);
+    mix-blend-mode: difference;
+}
+
+/* end cursor */
+
+/* begin load animation*/
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* end load animation*/
+
+/* Scrollbar container */
+.c-scrollbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 7px;
+    height: 100vh;
+    z-index: 59;
+    pointer-events: none;
+}
+
+/* Scroll thumb */
+.c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+    background-color: #000;
+    opacity: 0.5;
+    cursor: grab;
+    z-index: 59;
+    pointer-events: auto;
+}
+
+footer {
+    height: fit-content;
+    background-color: black;
+    color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.bottom-title {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.bottom-title h1 {
+    color: red;
+    text-align: center;
+    font-size: 5.5rem;
+    animation: move-rtl 30000ms linear infinite;
+    white-space: nowrap;
+    padding: 0 1rem;
+}
+
+@keyframes move-rtl {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.socials-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center items for better small screen layout */
+}
+
+.socials-container a {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 1em;
+    display: grid;
+    place-items: center;
+    position: relative;
+    border-radius: 100%;
+    min-width: 48px; /* Ensure good tap target size */
+    min-height: 48px;
+}
+
+.socials-container a svg {
+    height: 32px;
+    fill: white;
+}
+
+.socials-container a::before {
+    content: attr(data-social);
+    position: absolute;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: .5em 1em;
+    border-radius: 100px;
+    transform: translateY(-30px) rotate(25deg);
+    opacity: 0;
+    transition: 200ms ease-in-out;
+}
+
+.socials-container a:hover::before {
+    opacity: 1;
+    transform: translateY(-65px) rotate(0);
+}
+
+.socials-container a:hover::after {
+    opacity: 1;
+    transform: translateY(-42px) rotate(0);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column; /* Start with column layout */
+}
+
+.contact-info {
+    height: fit-content;
+    width: 100%; /* Full width on small screens */
+    color: white;
+    line-height: 1.5rem;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contact-info a {
+    color: grey;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 0; /* Add padding for better touch targets */
+}
+
+.contact-info a:hover {
+    color: white;
+    text-decoration: underline;
+    transition: 200ms;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'futura', sans-serif;
+}
+
+/* INCLUDE EVERYTHING ABOVE ON EVERY PAGE */
+
+.blog {
+    width: 90%; /* Start with a larger width for small screens */
+    max-width: 800px; /* Max width to prevent line length from being too long */
+    margin: 0 auto;
+    line-height: 1.4em;
+    padding: 20px;
+}
+
+.blog h3,
+.blog h4 {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.levels-table,
+.nas-vs-cloud {
+    width: 95%; /* Make tables almost full width */
+    overflow-x: auto; /* Enable horizontal scrolling for tables */
+    margin: 20px auto;
+    border: solid 2px black;
+    border-radius: 5px;
+}
+
+.levels-table table,
+.nas-vs-cloud table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.levels-table td,
+.nas-vs-cloud td {
+    padding: 10px;
+    line-height: 1.4em;
+    white-space: normal;
+    word-wrap: break-word; /* Ensure text wraps */
+}
+
+.spacer {
+    height: 25px;
+}
+
+.entry-meta {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    white-space: nowrap;
+    align-items: center;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+.entry-meta li {
+    display: inline-block;
+    margin-inline-end: 9px;
+}
+
+.entry-meta li img {
+    border-radius: 100%;
+    margin-inline-end: .5em;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+[class*="ct-media-container"] {
+    display: inline-flex;
+    overflow: hidden;
+    isolation: isolate;
+    vertical-align: middle;
+}
+
+.ct-media-container-static img {
+    aspect-ratio: 1/1;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.blog-list {
+    width: 90%;
+    justify-self: center;
+    margin: 0 auto;
+}
+
+/*
+*
+*
+* Media Queries
+*
+*
+*/
+
+/*
+*
+* Breakpoint 1: max-width: 576px (Extra Small devices)
+*
+*/
+@media (max-width: 576px) {
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hide off-screen by default */
+  width: 75%;
+  height: 100vh;
+  background-color: rgb(42, 42, 42); /* Semi-transparent background */
+  mix-blend-mode: normal;
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 10000;
+  overflow-y: auto;
+  font-size: 1.2rem;
+  
+}
+
+    .navbar {
+        height: 80px;
+    }
+
+    .logo img {
+        height: 40px; /* Smaller logo */
+    }
+
+    .bottom-title h1 {
+        font-size: 2rem; /* Smaller font size for the animated text */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Force stack */
+        align-items: center;
+    }
+
+    .contact-info {
+        text-align: center;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .socials-container {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .blog {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .levels-table,
+    .nas-vs-cloud {
+        width: 100%; /* Full width tables */
+        font-size: 0.9em;
+    }
+}
+
+/*
+*
+* Breakpoint 2: min-width: 577px and max-width: 767px (Small devices)
+*
+*/
+@media (min-width: 577px) and (max-width: 767px) {
+    .side-menu {
+        width: 350px;
+    }
+
+    .bottom-title h1 {
+        font-size: 3rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info {
+        text-align: center;
+        width: 100%;
+    }
+
+    .socials-container {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .blog {
+        width: 85%;
+    }
+
+    .levels-table,
+    .nas-vs-cloud {
+        width: 90%;
+    }
+}
+
+/*
+*
+* Breakpoint 3: min-width: 768px and max-width: 991px (Medium devices)
+*
+*/
+@media (min-width: 768px) and (max-width: 991px) {
+    .bottom-title h1 {
+        font-size: 4rem;
+    }
+
+    .footer-container {
+        flex-direction: row; /* Horizontal layout */
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    .contact-info {
+        width: 45%;
+        text-align: left;
+    }
+
+    .socials-container {
+        justify-content: flex-start;
+        margin-top: 0;
+    }
+
+    .blog {
+        width: 75%;
+    }
+
+    .levels-table,
+    .nas-vs-cloud {
+        width: 80%;
+    }
+}
+
+/*
+*
+* Breakpoint 4: min-width: 992px and max-width: 1199px (Large devices)
+*
+*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    .bottom-title h1 {
+        font-size: 5rem;
+    }
+
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    .contact-info {
+        width: 300px;
+    }
+
+    .blog {
+        width: 65%;
+    }
+
+    .levels-table,
+    .nas-vs-cloud {
+        width: 75%;
+    }
+}
+
+/*
+*
+* Breakpoint 5: min-width: 1200px (Extra Large devices)
+*
+*/
+@media (min-width: 1200px) {
+    .bottom-title h1 {
+        font-size: 5.5rem;
+    }
+
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    .contact-info {
+        width: 400px;
+    }
+
+    .blog {
+        width: 60%;
+    }
+
+    .levels-table,
+    .nas-vs-cloud {
+        width: 75%;
+    }
+}
