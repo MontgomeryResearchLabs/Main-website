@@ -212,8 +212,8 @@ nav li{
 .side-menu {
   position: fixed;
   top: 0;
-  right: -450px; /* Hide off-screen by default */
-  width: 400px;
+  right: -576px; /* Hide off-screen by default */
+  width: 75%;
   height: 100vh;
   background-color: rgb(42, 42, 42); /* Semi-transparent background */
   mix-blend-mode: normal;
@@ -222,7 +222,7 @@ nav li{
   transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
   z-index: 990;
   overflow-y: auto;     
-  font-size: 2rem;
+  font-size: 1.2rem;
   
 }
 
