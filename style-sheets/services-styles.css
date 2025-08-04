@@ -5,6 +5,10 @@
 *
 */
 
+main{
+  overflow-x: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -491,6 +495,25 @@ footer {
 * Styles here OVERRIDE the base styles for larger screens
 *
 */
+@media only screen and (max-width: 576px){
+    .side-menu {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hide off-screen by default */
+  width: 75%;
+  height: 100vh;
+  background-color: rgb(42, 42, 42); /* Semi-transparent background */
+  mix-blend-mode: normal;
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 10000;
+  overflow-y: auto;
+  font-size: 1.2rem;
+  
+}
+}
+
 
 /* min-width: 577px and max-width: 767px (Small devices) */
 @media (min-width: 577px) and (max-width: 767px) {
