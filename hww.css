@@ -90,6 +90,8 @@ body{
 
 .explore{
     padding-top:-20px;
+
+    padding-bottom: 60px;
     height:100vh;
     width: 100vw;
     background-color: blue;
