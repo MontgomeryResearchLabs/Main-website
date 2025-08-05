@@ -572,6 +572,51 @@ mix-blend-mode: difference; /* Negative color effect */
           }
 
 
+      .michael{
+
+        position:relative;
+        align-self: center;
+        margin-top : 30px;
+        padding-top: 200px;
+        padding-bottom: 200px;
+        font-size: 2.5rem;
+        width: 60%;
+        background-image: url('Devin.jpeg');
+        filter: grayscale(100%);
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: #fffdd0;
+        transition: all 0.5s ease;
+        overflow: hidden;
+    
+      }
+    
+        .michael:hover{
+            
+            filter: none;
+            transform: scale(1.05);
+        }
+    
+    
+
+      .michael:hover .preview-image {
+        opacity: 0;
+      }
+
+      .michael:hover .video-container {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    
+
+
+          .michael:hover .default-text {
+            opacity: 0;
+          }
+
+          .michael:hover .hover-text {
+            opacity: 1;
+          }
 
 
 
@@ -1053,23 +1098,7 @@ mix-blend-mode: difference; /* Negative color effect */
             transform: scale(1.05);
         }
     
-    .preview-image img,
-    .video-container iframe {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      transition: opacity 0.5s ease;
-    }
-    
-    .video-container {
-        opacity: 0;
-        pointer-events: none;
-      }
-    
+   
       .devin:hover .preview-image {
         opacity: 0;
       }
@@ -1081,20 +1110,6 @@ mix-blend-mode: difference; /* Negative color effect */
     
       
       
-          .name {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            color: #fffdd0;
-            font-size: 1.2em;
-            z-index: 1;
-            transition: opacity 0.3s ease;
-          }
-    
-          .hover-text {
-            opacity: 0;
-          }
-          
           .devin:hover .default-text {
             opacity: 0;
           }
@@ -1585,22 +1600,7 @@ mix-blend-mode: difference; /* Negative color effect */
             transform: scale(1.05);
         }
     
-    .preview-image img,
-    .video-container iframe {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      transition: opacity 0.5s ease;
-    }
     
-    .video-container {
-        opacity: 0;
-        pointer-events: none;
-      }
     
       .devin:hover .preview-image {
         opacity: 0;
@@ -1612,20 +1612,6 @@ mix-blend-mode: difference; /* Negative color effect */
       }
     
       
-      
-          .name {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            color: #fffdd0;
-            font-size: 1.2em;
-            z-index: 1;
-            transition: opacity 0.3s ease;
-          }
-    
-          .hover-text {
-            opacity: 0;
-          }
           
           .devin:hover .default-text {
             opacity: 0;
@@ -1636,6 +1622,49 @@ mix-blend-mode: difference; /* Negative color effect */
           }
 
 
+      .michael{
+
+        position:relative;
+        align-self: center;
+        margin-top : 30px;
+        padding-top: 200px;
+        padding-bottom: 200px;
+        font-size: 2.5rem;
+        width: 60%;
+        background-image: url('Devin.jpeg');
+        filter: grayscale(100%);
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: #fffdd0;
+        transition: all 0.5s ease;
+        overflow: hidden;
+    
+      }
+    
+        .michael:hover{
+            
+            filter: none;
+            transform: scale(1.05);
+        }
+
+      .michael:hover .preview-image {
+        opacity: 0;
+      }
+
+      .michael:hover .video-container {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    
+
+
+       .michael:hover .default-text {
+            opacity: 0;
+          }
+          
+          .michael:hover .hover-text {
+            opacity: 1;
+          }
 
 
 
@@ -2117,22 +2146,7 @@ mix-blend-mode: difference; /* Negative color effect */
             transform: scale(1.05);
         }
     
-    .preview-image img,
-    .video-container iframe {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      transition: opacity 0.5s ease;
-    }
     
-    .video-container {
-        opacity: 0;
-        pointer-events: none;
-      }
     
       .devin:hover .preview-image {
         opacity: 0;
@@ -2145,19 +2159,7 @@ mix-blend-mode: difference; /* Negative color effect */
     
       
       
-          .name {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            color: #fffdd0;
-            font-size: 1.2em;
-            z-index: 1;
-            transition: opacity 0.3s ease;
-          }
-    
-          .hover-text {
-            opacity: 0;
-          }
+         
           
           .devin:hover .default-text {
             opacity: 0;
@@ -2167,6 +2169,52 @@ mix-blend-mode: difference; /* Negative color effect */
             opacity: 1;
           }
 
+
+      .michael{
+
+        position:relative;
+        align-self: center;
+        margin-top : 30px;
+        padding-top: 200px;
+        padding-bottom: 200px;
+        font-size: 2.5rem;
+        width: 60%;
+        background-image: url('Devin.jpeg');
+        filter: grayscale(100%);
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: #fffdd0;
+        transition: all 0.5s ease;
+        overflow: hidden;
+    
+      }
+
+        .michael:hover{
+
+            filter: none;
+            transform: scale(1.05);
+        }
+
+      .michael:hover .preview-image {
+        opacity: 0;
+      }
+
+      .michael:hover .video-container {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    
+      
+      
+        
+
+          .michael:hover .default-text {
+            opacity: 0;
+          }
+          
+          .michael:hover .hover-text {
+            opacity: 1;
+          }
 
 
 
@@ -2648,22 +2696,7 @@ mix-blend-mode: difference; /* Negative color effect */
             transform: scale(1.05);
         }
     
-    .preview-image img,
-    .video-container iframe {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      transition: opacity 0.5s ease;
-    }
-    
-    .video-container {
-        opacity: 0;
-        pointer-events: none;
-      }
+   
     
       .devin:hover .preview-image {
         opacity: 0;
@@ -2676,25 +2709,59 @@ mix-blend-mode: difference; /* Negative color effect */
     
       
       
-          .name {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            color: #fffdd0;
-            font-size: 1.2em;
-            z-index: 1;
-            transition: opacity 0.3s ease;
-          }
-    
-          .hover-text {
-            opacity: 0;
-          }
+     
           
           .devin:hover .default-text {
             opacity: 0;
           }
           
           .devin:hover .hover-text {
+            opacity: 1;
+          }
+
+ .michael{
+
+        position:relative;
+        align-self: center;
+        margin-top : 30px;
+        padding-top: 200px;
+        padding-bottom: 200px;
+        font-size: 2.5rem;
+        width: 60%;
+        background-image: url('Devin.jpeg');
+        filter: grayscale(100%);
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: #fffdd0;
+        transition: all 0.5s ease;
+        overflow: hidden;
+    
+      }
+
+        .michael:hover{
+
+            filter: none;
+            transform: scale(1.05);
+        }
+
+      .michael:hover .preview-image {
+        opacity: 0;
+      }
+
+      .michael:hover .video-container {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    
+      
+      
+        
+
+          .michael:hover .default-text {
+            opacity: 0;
+          }
+          
+          .michael:hover .hover-text {
             opacity: 1;
           }
 
@@ -2767,5 +2834,3 @@ mix-blend-mode: difference; /* Negative color effect */
 }
 
 }
-
-
