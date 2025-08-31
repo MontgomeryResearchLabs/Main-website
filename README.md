@@ -1,4 +1,4 @@
-**Welcome to Montgomery Research Labs **🔬
+**Welcome to Montgomery Research Labs**🔬
 
 This repository houses the code for Montgomery Research Labs, a personal portfolio website created by Trammell Montgomery. The site serves as a platform to showcase my projects—both physical and digital—and to track my growth as a front-end developer.
 
